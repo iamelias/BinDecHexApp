@@ -34,8 +34,14 @@ class BinDecHexController: UIViewController {
         fromPickerView.dataSource = self
         toPickerView.dataSource = self
         activityIndicator.isHidden = true
-        fromLabel.text = "Bin" //Initializing labels
-        toLabel.text = "Bin"
+        fromLabel.text = "Dec" //Initializing labels
+        toLabel.text = "Dec"
+
+       // fromLabel.font.
+        
+        fromPickerView.selectRow(1, inComponent: 0, animated: true) //default pickerview position
+        toPickerView.selectRow(1, inComponent: 0, animated: true) 
+
     }
     
     @IBAction func convertButtonTapped(_ sender: Any) {
@@ -76,7 +82,7 @@ class BinDecHexController: UIViewController {
         if let bin = Int(inputTextField.text ?? "", radix: 2) {
             print(bin) // Output: 25
             let stringBin = "\(bin)"
-            displayResult("Bin:",stringBin)
+            displayResult("Binary:",stringBin)
         }
     }
 
@@ -98,7 +104,7 @@ class BinDecHexController: UIViewController {
         }
         
         print("full binary: \(binary)") //when elements = 8 print
-        displayResult("Bin:",binary)
+        displayResult("Binary:",binary)
         
     }
 
@@ -113,7 +119,7 @@ class BinDecHexController: UIViewController {
         
         let hex = String(Int(bin, radix: 2)!, radix: 16) //Convert Binary to Hex
         print(hex.uppercased())
-        displayResult("Hex:",hex.uppercased())
+        displayResult("Hexadecimal:",hex.uppercased())
         
     }
     
@@ -127,7 +133,7 @@ class BinDecHexController: UIViewController {
        let dec = Int(retrievedDec)
         let hex = String(dec!, radix: 16)
         print(hex.uppercased()) // "3d"
-        displayResult("Hex:",hex.uppercased())
+        displayResult("Hexadecimal:",hex.uppercased())
     }
     
     func HexToBin() {
@@ -139,7 +145,7 @@ class BinDecHexController: UIViewController {
         
         let bin = String(Int(hex, radix: 16)!, radix: 2)
         print(bin) // "1111101011001110"
-        displayResult("Bin:",bin)
+        displayResult("Binary:",bin)
     }
     
     func HexToDec() {
@@ -151,7 +157,7 @@ class BinDecHexController: UIViewController {
         let dec = Int(hex, radix: 16)!
         print(dec) // 163
         let stringDec = "\(dec)"
-        displayResult("Dec:",stringDec)
+        displayResult("Decimal:",stringDec)
     }
     
     func getBinary() -> String {
@@ -272,6 +278,7 @@ extension BinDecHexController: UIPickerViewDelegate, UIPickerViewDataSource {
         
             return UnitChoices[row] //format of each cell in pickerview
     }
+
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
