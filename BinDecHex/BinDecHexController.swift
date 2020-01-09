@@ -20,24 +20,27 @@ class BinDecHexController: UIViewController {
     @IBOutlet weak var decLabel: UILabel!
     @IBOutlet weak var binLabel: UILabel!
     @IBOutlet weak var hexLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     //var selectedUnit = ""
     
     var UnitChoices: [String] = ["Bin", "Dec", "Hex"]
+    var syntaxCheck: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        inputTextField.delegate = self
         fromPickerView.delegate = self
         toPickerView.delegate = self
         fromPickerView.dataSource = self
         toPickerView.dataSource = self
-        
+        activityIndicator.isHidden = true
         fromLabel.text = "Bin" //Initializing labels
         toLabel.text = "Bin"
-        
-        
     }
     
     @IBAction func convertButtonTapped(_ sender: Any) {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         
         if (fromLabel.text == "Bin" && toLabel.text == "Dec") {
             BinToDec()
@@ -67,15 +70,24 @@ class BinDecHexController: UIViewController {
     }
     
     func BinToDec() { //Complete
+        let bin = getBinary()
+        guard bin != "error" else{ return}
         
-        if let number = Int(inputTextField.text ?? "", radix: 2) {
-            print(number) // Output: 25
+        if let bin = Int(inputTextField.text ?? "", radix: 2) {
+            print(bin) // Output: 25
+            let stringBin = "\(bin)"
+            displayResult("Bin:",stringBin)
         }
     }
 
     func DecToBin() { //Transform decimal to binary with 8 digits //Complete
-        let num = Int(inputTextField.text!) //input is ui textfield
-        var binary = String(num!, radix: 2) //converting from string to binary
+      //  let num = Int(inputTextField.text!) //input is ui textfield
+        let retrievedDec = getDecimal()
+        guard retrievedDec != "error" else {
+            return
+        }
+        let bin = Int(retrievedDec)
+        var binary = String(bin!, radix: 2) //converting from string to binary
             print(binary) //binary after conversion
 //        let additional = 8 - binary.count
         print(binary.count) //number of elements in binary
@@ -86,34 +98,161 @@ class BinDecHexController: UIViewController {
         }
         
         print("full binary: \(binary)") //when elements = 8 print
+        displayResult("Bin:",binary)
         
     }
-    
+
     func BinToHex() {
-        let binNum = inputTextField.text!
-        let hexNum = String(Int(binNum, radix: 2)!, radix: 16) //Binary to Hex
-        print(hexNum)
+
+        let bin = getBinary()
+        guard bin != "error" else{
+            
+            return
+            
+        }
+        
+        let hex = String(Int(bin, radix: 2)!, radix: 16) //Convert Binary to Hex
+        print(hex.uppercased())
+        displayResult("Hex:",hex.uppercased())
         
     }
     
     func DecToHex() {
  print("reached dechex")
         //let dec = inputTextField.text!
-        let useDec = Int(inputTextField.text!)
-        let hex = String(useDec!, radix: 16)
-        print(hex) // "3d"
+        let retrievedDec = getDecimal()
+        guard retrievedDec != "error" else {
+            return
+        }
+       let dec = Int(retrievedDec)
+        let hex = String(dec!, radix: 16)
+        print(hex.uppercased()) // "3d"
+        displayResult("Hex:",hex.uppercased())
     }
     
     func HexToBin() {
-        let hex = inputTextField.text!
+        let hex = getCheckHex()
+        guard hex != "error" else{
+            hexAlert()
+            return
+        }
+        
         let bin = String(Int(hex, radix: 16)!, radix: 2)
         print(bin) // "1111101011001110"
+        displayResult("Bin:",bin)
     }
     
     func HexToDec() {
-        let hex = inputTextField.text!
+        let hex = getCheckHex()
+        guard hex != "error" else{
+            hexAlert()
+            return
+        }
         let dec = Int(hex, radix: 16)!
         print(dec) // 163
+        let stringDec = "\(dec)"
+        displayResult("Dec:",stringDec)
+    }
+    
+    func getBinary() -> String {
+        
+        let bin = inputTextField.text!
+        let checkSyntax = binaryCheck(bin) //checking input syntax
+        guard checkSyntax == true else { //will only calculate if input is in right format else leave func
+            return "error"
+        }
+        return bin
+    }
+    
+    func getDecimal() -> String {
+        let dec = inputTextField.text!
+        let checkSyntax = decimalCheck(dec)
+        guard checkSyntax == true else {
+            return "error"
+        }
+        return dec
+    }
+    
+    func getCheckHex() -> String { //Gets and Checks input Hex
+        let hex = inputTextField.text!
+        let checkHex = hex.map { $0.isHexDigit}
+       
+        for i in 0..<checkHex.count{
+            if checkHex[i] == false {
+                return "error"
+            }
+        }
+        return hex
+    }
+    
+    func decimalCheck(_ decNum: String) -> Bool {
+
+        let checkNum = Int(decNum) //convert passed string to int, won't convert nonint
+        print("checkNum: \(String(describing: checkNum))") //print the converted int
+        if checkNum != nil { //if doesn't convert
+        return true //it is a valid int/decimal
+    }
+        else {
+            let alertTitle = "Sytnax Error"
+            let alertMessage = "Can't convert because input is not in decimal format"
+            alertMethod(alertTitle, alertMessage)
+            
+            return false
+            
+        }
+    }
+    
+    func binaryCheck(_ binNum: String) -> Bool { //This method checks if input is in binary format
+        
+        for c in binNum { //checking if input is in binary syntax, if not 0/1 exit func
+            
+            if c != "0" && c != "1" {
+                print("called alertmethod in binaryCheck")
+                let alertTitle = "Syntax Error"
+                let alertMessage = "Can't convert because input is not in binary format"
+                alertMethod(alertTitle, alertMessage)
+                return false //return false if syntax error
+            }
+            //else  {return true} //if no syntax error return true
+        }
+        return true
+    }
+    
+    func alertMethod(_ alertTitle: String,_ alertMessage: String) { // Error alert
+        print("called alert method")
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(ok)
+        present(alert, animated: true)
+        activityIndicator.stopAnimating()
+    }
+    
+    func hexAlert() {
+        let alertTitle = "Sytnax Error"
+        let alertMessage = "Can't convert because input is not in hexadecimal format"
+        alertMethod(alertTitle, alertMessage)
+        activityIndicator.stopAnimating()
+        
+    }
+    
+    func displayResult(_ convertedType: String,_ convertedValue: String) {
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+        decValueLabel.text = convertedValue
+        decLabel.text = convertedType
+        
+        
+    }
+    
+}
+
+//MARK: Extensions
+
+extension BinDecHexController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        inputTextField.resignFirstResponder()
+        return true
     }
     
 }
@@ -136,8 +275,7 @@ extension BinDecHexController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-//        if fromLabel.is
-        //pickerView'
+
         print("Made it here")
         if pickerView.tag == 1 {
             print("Reached here")
@@ -148,7 +286,7 @@ extension BinDecHexController: UIPickerViewDelegate, UIPickerViewDataSource {
         toLabel.text = UnitChoices[row]
             print("Reached here 2")
         }
-        
     }
 }
 
+    

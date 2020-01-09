@@ -28,14 +28,13 @@
                                         <rect key="frame" x="0.0" y="20" width="118" height="261.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hee-ej-ILH">
-                                                <rect key="frame" x="38.333333333333343" y="0.0" width="41.666666666666657" height="20.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="36.666666666666671" y="0.0" width="44.666666666666671" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWs-of-iqQ">
                                                 <rect key="frame" x="0.0" y="25.333333333333343" width="118" height="211"/>
-                                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="211" id="92a-It-CVa"/>
                                                     <constraint firstAttribute="width" constant="118" id="utm-9j-jNd"/>
@@ -60,14 +59,13 @@
                                         <rect key="frame" x="225" y="20" width="118" height="261.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzV-b9-7WW">
-                                                <rect key="frame" x="38.333333333333314" y="0.0" width="41.666666666666657" height="20.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="36.666666666666686" y="0.0" width="44.666666666666657" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2v-16-ysH">
                                                 <rect key="frame" x="0.0" y="25.333333333333343" width="118" height="211"/>
-                                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="211" id="GWp-nl-qVR"/>
                                                     <constraint firstAttribute="width" constant="118" id="Swv-V7-xqe"/>
@@ -168,8 +166,12 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Q8Y-vV-dce">
+                                <rect key="frame" x="177" y="512" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="frl-t8-z3j" secondAttribute="bottom" constant="67.670000000000002" id="0XZ-o8-reA"/>
                             <constraint firstItem="dW2-WV-azN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Cs-Ys-oaM"/>
@@ -186,6 +188,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Q8Y-vV-dce" id="Gn7-nR-Fia"/>
                         <outlet property="binLabel" destination="Xbb-Xf-NiB" id="0vV-RY-0ny"/>
                         <outlet property="binValueLabel" destination="kKG-7B-oP2" id="Wmh-ok-Vuy"/>
                         <outlet property="decLabel" destination="cIJ-66-dba" id="A0Z-Yq-SEQ"/>
