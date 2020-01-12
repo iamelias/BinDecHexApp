@@ -21,4 +21,6 @@ Core Data, UIKit, iPhone 11 Pro/ iPhone 11 simulator, iPad Pro
 <img src = "Images/ScreenShot1.png" width="100" height="200">
 <img src = "Images/ScreenShot2.png" width="100" height="200">
 <img src = "Images/ScreenShot3.png" width="100" height="200">
+<img src = "Images/ScreenShot4.png" width="100" height="200">
+
 </p>
