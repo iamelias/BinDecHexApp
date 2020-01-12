@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class BinDecHexController: UIViewController {
+    //MARK: IBOutlets
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var resultValueLabel: UILabel!
     @IBOutlet weak var fromLabel: UILabel!
@@ -20,11 +21,9 @@ class BinDecHexController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var syntaxCheck: Bool = false
-    //var dataController: DataController?
     var saveEntryName: [SavedEntry] = []
     var coreDataRetrieved: Bool = false
     var fetchResult: [SavedEntry] = []
-    //var fetchResult2: [SavedEntry] = []
     let context = DatabaseController.persistentStoreContainer().viewContext
     
     override func viewDidLoad() {
@@ -299,7 +298,6 @@ class BinDecHexController: UIViewController {
                 return false //return false if syntax error
             }
         }
-        
         return true
     }
     
@@ -372,7 +370,6 @@ class BinDecHexController: UIViewController {
         
         resLabel.text = "\(typeFullName[toLabel.text!] ?? ""): "
         resLabel.isHidden = false
-        
     }
     
     func deleteCoreGroup() { //deletes the saved data from core data
@@ -381,11 +378,10 @@ class BinDecHexController: UIViewController {
             // try? context.save()
             DatabaseController.saveContext()
             
-            print("deleted core")
+            print("emptying core")
         }
         fetchResult.removeAll()
     }
-    
     func saveCore(_ result: String) { // saving data to core data will be added when convert buttton is pressed
         
         //deleteCoreGroup()
@@ -396,10 +392,7 @@ class BinDecHexController: UIViewController {
         coreSave.resultValue = result
         
         DatabaseController.saveContext()
-        
     }
-    
-
 }
 
 
