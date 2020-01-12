@@ -11,38 +11,21 @@ import CoreData
 
 class BinDecHexController: UIViewController {
     @IBOutlet weak var inputTextField: UITextField!
-    @IBOutlet weak var decValueLabel: UILabel!
+    @IBOutlet weak var resultValueLabel: UILabel!
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var toLabel: UILabel!
     @IBOutlet weak var fromPickerView: UIPickerView!
     @IBOutlet weak var toPickerView: UIPickerView!
-    @IBOutlet weak var decLabel: UILabel!
+    @IBOutlet weak var resLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var UnitChoices: [String] = ["Bin", "Dec", "Hex"]
-    var labelDic: [String: Int] = ["Bin": 0, "Dec": 1, "Hex": 2]
-    var typeFullName: [String: String] = ["Bin": "Binary", "Dec": "Decimal", "Hex": "Hexadecimal"]
     var syntaxCheck: Bool = false
-    var dataController: DataController?
+    //var dataController: DataController?
     var saveEntryName: [SavedEntry] = []
     var coreDataRetrieved: Bool = false
     var fetchResult: [SavedEntry] = []
-    var fetchResult2: [SavedEntry] = []
+    //var fetchResult2: [SavedEntry] = []
     let context = DatabaseController.persistentStoreContainer().viewContext
-    
-    enum Units: String {
-        case Bin = "Binary"
-        case Dec = "Decimal"
-        case Hex = "Hexadecimal"
-    }
-
-    enum mChoices: String {
-        case hexMsg = "Can't convert because input is not in hexadecimal format"
-        case binMsg = "Can't convert because input is not in binary format"
-        case decMsg = "Can't convert because input is not in decimal format"
-        case upper = "Input is past upper limit"
-        case sytanxMsg = "Syntax Error"
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +36,11 @@ class BinDecHexController: UIViewController {
         toPickerView.dataSource = self
         fromLabel.text = "Dec" //Initializing labels
         toLabel.text = "Dec"
-        decLabel.isHidden = true
+        resLabel.isHidden = true
         retrieveCoreData() //getting persisted data
         activityIndicator.isHidden = true //hiding activity indicator
-//       deleteCoreGroup()
-
+        //       deleteCoreGroup()
+        
         fromPickerView.selectRow(labelDic[fromLabel.text ?? "Dec"]!, inComponent: 0, animated: true) //default pickerview position from core data or default
         toPickerView.selectRow(labelDic[toLabel.text ?? "Dec"]!, inComponent: 0, animated: true)
     }
@@ -70,31 +53,31 @@ class BinDecHexController: UIViewController {
         if (fromLabel.text == "Bin" && toLabel.text == "Dec") {
             binToDec()
         }
-        
+            
         else if (fromLabel.text == "Bin" && toLabel.text == "Hex") {
             binToHex()
         }
             
         else if (fromLabel.text == "Bin" && toLabel.text == "Bin") { //BinBin
-                binToBin()
-            }
-        
+            binToBin()
+        }
+            
         else if (fromLabel.text == "Dec" && toLabel.text == "Bin") {
             decToBin()
         }
-        
+            
         else if (fromLabel.text == "Dec" && toLabel.text == "Hex") {
             decToHex()
         }
-        
+            
         else if (fromLabel.text == "Dec" && toLabel.text == "Dec") {  //DecDec
             decToDec()
         }
-        
+            
         else if (fromLabel.text == "Hex" && toLabel.text == "Bin") {
             hexToBin()
         }
-        
+            
         else if (fromLabel.text == "Hex" && toLabel.text == "Dec") {
             hexToDec()
         }
@@ -103,6 +86,18 @@ class BinDecHexController: UIViewController {
             hexToHex()
         }
         else { print("Error")}
+    }
+    
+    @IBAction func refreshTapped(_ sender: Any) { //refreshing everything to default settings
+        inputTextField.text = ""
+        fromLabel.text = "Dec"
+        toLabel.text = "Dec"
+        resLabel.isHidden = true
+        resultValueLabel.isHidden = true
+        print("refresh tapped")
+        fromPickerView.selectRow(labelDic["Dec"]!, inComponent: 0, animated: true) //default pickerview position from core data or default
+        toPickerView.selectRow(labelDic["Dec"]!, inComponent: 0, animated: true)
+        self.deleteCoreGroup()
     }
     
     func binToDec() { //Complete
@@ -115,10 +110,10 @@ class BinDecHexController: UIViewController {
             displayResult("Decimal:",stringDec)
         }
     }
-
+    
     func decToBin() { //Transform decimal to binary with 8 digits //Complete
         
-            let retrievedDec = getDecimal()
+        let retrievedDec = getDecimal()
         guard retrievedDec != "error" else {
             return
         }
@@ -128,8 +123,8 @@ class BinDecHexController: UIViewController {
         binary = padBin(binary) //padding to the left with 0 until num of binary digits = 8
         
         saveCore(binary)
-            displayResult("Binary:",binary)
-        }
+        displayResult("Binary:",binary)
+    }
     
     func binToBin() {
         
@@ -140,7 +135,7 @@ class BinDecHexController: UIViewController {
         }
         
         bin = padBin(bin)
-
+        
         saveCore(bin)
         displayResult("Binary:",bin)
     }
@@ -164,9 +159,9 @@ class BinDecHexController: UIViewController {
         saveCore(hex.uppercased())
         displayResult("Hexadecimal: ", hex.uppercased())
     }
-
+    
     func binToHex() {
-            let bin = self.getBinary()
+        let bin = self.getBinary()
         guard bin != "error" else{
             
             return
@@ -175,7 +170,7 @@ class BinDecHexController: UIViewController {
         let hex = String(Int(bin, radix: 2)!, radix: 16) //Convert Binary to Hex
         
         saveCore(hex.uppercased())
-            displayResult("Hexadecimal:",hex.uppercased())
+        displayResult("Hexadecimal:",hex.uppercased())
     }
     
     func decToHex() {
@@ -183,7 +178,7 @@ class BinDecHexController: UIViewController {
         guard retrievedDec != "error" else {
             return
         }
-       let dec = Int(retrievedDec)
+        let dec = Int(retrievedDec)
         let hex = String(dec!, radix: 16)
         saveCore(hex.uppercased())
         displayResult("Hexadecimal:",hex.uppercased())
@@ -204,9 +199,9 @@ class BinDecHexController: UIViewController {
         var bin = String(Int(hex, radix: 16)!, radix: 2)
         
         bin = padBin(bin)
-
+        
         saveCore(bin)
-
+        
         displayResult("Binary:",bin)
     }
     
@@ -239,7 +234,7 @@ class BinDecHexController: UIViewController {
     
     func getDecimal() -> String {
         let dec = inputTextField.text!
-
+        
         let checkSyntax = decimalCheck(dec)
         guard checkSyntax == true else {
             return "error"
@@ -258,7 +253,7 @@ class BinDecHexController: UIViewController {
             return "error2"
         }
         let checkHex = hex.map { $0.isHexDigit}
-       
+        
         for i in 0..<checkHex.count{
             if checkHex[i] == false {
                 return "error"
@@ -268,20 +263,20 @@ class BinDecHexController: UIViewController {
     }
     
     func decimalCheck(_ decNum: String) -> Bool {
-
+        
         let checkNum = Int(decNum) //convert passed string to int, won't convert nonint
         if checkNum != nil { //if doesn't convert
             
             guard checkNum! < 1000000000 else { //making an upperlimit to users capability
-               // let alertTitle = "Syntax Error"
+                // let alertTitle = "Syntax Error"
                 //let alertMessage = "input is too large"
                 alertMethod(mChoices.sytanxMsg.rawValue, mChoices.upper.rawValue)
                 return false
             }
-        return true //it is a valid int/decimal
-    }
+            return true //it is a valid int/decimal
+        }
         else {
-       //     let alertTitle = "Sytnax Error"
+            //     let alertTitle = "Sytnax Error"
             alertMethod(mChoices.sytanxMsg.rawValue, mChoices.decMsg.rawValue)
             
             return false
@@ -291,7 +286,7 @@ class BinDecHexController: UIViewController {
     func binaryCheck(_ binNum: String) -> Bool { //This method checks if input is in binary format
         
         if binNum == "" {
-        //    let alertTitle = "Syntax Error"
+            //    let alertTitle = "Syntax Error"
             alertMethod(mChoices.sytanxMsg.rawValue, mChoices.binMsg.rawValue)
             return false
         }
@@ -299,7 +294,7 @@ class BinDecHexController: UIViewController {
         for c in binNum { //checking if input is in binary syntax, if not 0/1 exit func
             
             if c != "0" && c != "1" {
-          //      let alertTitle = "Syntax Error"//
+                //      let alertTitle = "Syntax Error"//
                 alertMethod(mChoices.sytanxMsg.rawValue, mChoices.binMsg.rawValue)
                 return false //return false if syntax error
             }
@@ -330,10 +325,10 @@ class BinDecHexController: UIViewController {
     func displayResult(_ convertedType: String,_ convertedValue: String) {
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
-        decValueLabel.isHidden = false
-        decValueLabel.text = convertedValue
-        decLabel.text = convertedType
-        decLabel.isHidden = false
+        resultValueLabel.isHidden = false
+        resultValueLabel.text = convertedValue
+        resLabel.text = convertedType
+        resLabel.isHidden = false
     }
     
     func hapticError() {
@@ -358,32 +353,32 @@ class BinDecHexController: UIViewController {
         let fetchRequest: NSFetchRequest = SavedEntry.fetchRequest() //pulling data from coreData
         
         do {
-         fetchResult = try context.fetch(fetchRequest) //setting fetched result into array
+            fetchResult = try context.fetch(fetchRequest) //setting fetched result into array
         }
         catch{
             print("unable to fetch")
-//            debugprint(error)
+            //            debugprint(error)
             return
         }
         guard !fetchResult.isEmpty else {
             return
         }
         print(fetchResult.count)
-
+        
         inputTextField.text = fetchResult.last!.fieldText
         fromLabel.text = fetchResult.last!.inputPick
         toLabel.text = fetchResult.last!.outputPick
-        decValueLabel.text = fetchResult.last!.resultValue
+        resultValueLabel.text = fetchResult.last!.resultValue
         
-        decLabel.text = "\(typeFullName[toLabel.text!] ?? ""): "
-        decLabel.isHidden = false
-
-        }
+        resLabel.text = "\(typeFullName[toLabel.text!] ?? ""): "
+        resLabel.isHidden = false
+        
+    }
     
     func deleteCoreGroup() { //deletes the saved data from core data
         for i in 0..<fetchResult.count {
             context.delete(fetchResult[i])
-           // try? context.save()
+            // try? context.save()
             DatabaseController.saveContext()
             
             print("deleted core")
@@ -392,30 +387,20 @@ class BinDecHexController: UIViewController {
     }
     
     func saveCore(_ result: String) { // saving data to core data will be added when convert buttton is pressed
-
+        
         //deleteCoreGroup()
         let coreSave = SavedEntry(context: context)
         coreSave.fieldText = inputTextField.text
         coreSave.inputPick = fromLabel.text
         coreSave.outputPick = toLabel.text
         coreSave.resultValue = result
-
+        
         DatabaseController.saveContext()
         
     }
     
-    @IBAction func refreshTapped(_ sender: Any) {
-        inputTextField.text = ""
-        fromLabel.text = "Dec"
-        toLabel.text = "Dec"
-        decLabel.isHidden = true
-        decValueLabel.isHidden = true
-        print("refresh tapped")
-        fromPickerView.selectRow(labelDic["Dec"]!, inComponent: 0, animated: true) //default pickerview position from core data or default
-        toPickerView.selectRow(labelDic["Dec"]!, inComponent: 0, animated: true)
-            self.deleteCoreGroup()
-    }
-    }
+
+}
 
 
 //MARK: Extensions
@@ -452,17 +437,17 @@ extension BinDecHexController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-            return UnitChoices[row] //format of each cell in pickerview
+        return UnitChoices[row] //format of each cell in pickerview
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if pickerView.tag == 1 {
-        fromLabel.text = UnitChoices[row]
+            fromLabel.text = UnitChoices[row]
         }
-        
+            
         else if pickerView.tag == 2 {
-        toLabel.text = UnitChoices[row]
+            toLabel.text = UnitChoices[row]
         }
     }
 }

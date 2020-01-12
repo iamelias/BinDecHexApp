@@ -126,6 +126,7 @@
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ3-Vc-XSX">
                                 <rect key="frame" x="320.66666666666669" y="42" width="17.666666666666686" height="22"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="arrow.clockwise" catalog="system"/>
                                 <connections>
                                     <action selector="refreshTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8qP-7P-zI7"/>
@@ -181,11 +182,11 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="Q8Y-vV-dce" id="Gn7-nR-Fia"/>
-                        <outlet property="decLabel" destination="cIJ-66-dba" id="A0Z-Yq-SEQ"/>
-                        <outlet property="decValueLabel" destination="O3O-T4-0yx" id="jBb-EO-cDl"/>
                         <outlet property="fromLabel" destination="hee-ej-ILH" id="02g-af-5dr"/>
                         <outlet property="fromPickerView" destination="EWs-of-iqQ" id="rDO-a2-Msp"/>
                         <outlet property="inputTextField" destination="Xoj-bf-aFT" id="zKT-wp-Q6H"/>
+                        <outlet property="resLabel" destination="cIJ-66-dba" id="A0Z-Yq-SEQ"/>
+                        <outlet property="resultValueLabel" destination="O3O-T4-0yx" id="jBb-EO-cDl"/>
                         <outlet property="toLabel" destination="Xzk-t4-ktQ" id="VIL-Wh-pVY"/>
                         <outlet property="toPickerView" destination="Kar-JX-EG1" id="IOj-Dy-4eu"/>
                     </connections>
