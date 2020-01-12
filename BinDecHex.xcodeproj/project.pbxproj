@@ -13,8 +13,6 @@
 		6471231123C4062300447422 /* BinDecHex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6471230F23C4062300447422 /* BinDecHex.xcdatamodeld */; };
 		6471231323C4062500447422 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6471231223C4062500447422 /* Assets.xcassets */; };
 		6471231623C4062500447422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6471231423C4062500447422 /* LaunchScreen.storyboard */; };
-		647F6D8A23C97FF700F68D72 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F6D8923C97FF700F68D72 /* DataController.swift */; };
-		64B5B21B23C544550070F49A /* HexDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B5B21A23C544550070F49A /* HexDictionary.swift */; };
 		64C3AF2423CA7C5A00F56158 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C3AF2323CA7C5A00F56158 /* SceneDelegate.swift */; };
 		64C3AF4923CA8E0700F56158 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C3AF4823CA8E0700F56158 /* DatabaseController.swift */; };
 		64C77E2823CB057700492A49 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C77E2723CB057700492A49 /* SharedData.swift */; };
@@ -29,8 +27,6 @@
 		6471231223C4062500447422 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6471231523C4062500447422 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6471231723C4062500447422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		647F6D8923C97FF700F68D72 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		64B5B21A23C544550070F49A /* HexDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexDictionary.swift; sourceTree = "<group>"; };
 		64C3AF2323CA7C5A00F56158 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		64C3AF4823CA8E0700F56158 /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		64C77E2723CB057700492A49 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
@@ -74,8 +70,6 @@
 				6471231423C4062500447422 /* LaunchScreen.storyboard */,
 				6471231723C4062500447422 /* Info.plist */,
 				6471230F23C4062300447422 /* BinDecHex.xcdatamodeld */,
-				64B5B21A23C544550070F49A /* HexDictionary.swift */,
-				647F6D8923C97FF700F68D72 /* DataController.swift */,
 				64C3AF4823CA8E0700F56158 /* DatabaseController.swift */,
 				64C77E2723CB057700492A49 /* SharedData.swift */,
 			);
@@ -153,9 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				647F6D8A23C97FF700F68D72 /* DataController.swift in Sources */,
 				6471231123C4062300447422 /* BinDecHex.xcdatamodeld in Sources */,
-				64B5B21B23C544550070F49A /* HexDictionary.swift in Sources */,
 				6471230B23C4062300447422 /* BinDecHexController.swift in Sources */,
 				64C77E2823CB057700492A49 /* SharedData.swift in Sources */,
 				6471230723C4062300447422 /* AppDelegate.swift in Sources */,
