@@ -24,6 +24,7 @@ class BinDecHexController: UIViewController {
     var saveEntryName: [SavedEntry] = []
     var coreDataRetrieved: Bool = false
     var fetchResult: [SavedEntry] = []
+    var dataCopy: SavedEntry?
     let context = DatabaseController.persistentStoreContainer().viewContext
     
     override func viewDidLoad() {
@@ -96,7 +97,8 @@ class BinDecHexController: UIViewController {
         print("refresh tapped")
         fromPickerView.selectRow(labelDic["Dec"]!, inComponent: 0, animated: true) //default pickerview position from core data or default
         toPickerView.selectRow(labelDic["Dec"]!, inComponent: 0, animated: true)
-        self.deleteCoreGroup()
+            deleteCoreGroup()
+        saveCore("")
     }
     
     func binToDec() { //Complete
@@ -369,7 +371,10 @@ class BinDecHexController: UIViewController {
         resultValueLabel.text = fetchResult.last!.resultValue
         
         resLabel.text = "\(typeFullName[toLabel.text!] ?? ""): "
+        
+        if resultValueLabel.text != "" {
         resLabel.isHidden = false
+        }
     }
     
     func deleteCoreGroup() { //deletes the saved data from core data
@@ -390,6 +395,7 @@ class BinDecHexController: UIViewController {
         coreSave.inputPick = fromLabel.text
         coreSave.outputPick = toLabel.text
         coreSave.resultValue = result
+        dataCopy = coreSave
         
         DatabaseController.saveContext()
     }
