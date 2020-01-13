@@ -363,7 +363,7 @@ class BinDecHexController: UIViewController {
         guard !fetchResult.isEmpty else {
             return
         }
-        print(fetchResult.count)
+        //print(fetchResult.count)
         
         inputTextField.text = fetchResult.last!.fieldText
         fromLabel.text = fetchResult.last!.inputPick
@@ -383,7 +383,7 @@ class BinDecHexController: UIViewController {
             // try? context.save()
             DatabaseController.saveContext()
             
-            print("emptying core")
+            //print("emptying core")
         }
         fetchResult.removeAll()
     }
