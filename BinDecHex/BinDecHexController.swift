@@ -269,15 +269,12 @@ class BinDecHexController: UIViewController {
         if checkNum != nil { //if doesn't convert
             
             guard checkNum! < 1000000000 else { //making an upperlimit to users capability
-                // let alertTitle = "Syntax Error"
-                //let alertMessage = "input is too large"
                 alertMethod(mChoices.sytanxMsg.rawValue, mChoices.upper.rawValue)
                 return false
             }
             return true //it is a valid int/decimal
         }
         else {
-            //     let alertTitle = "Sytnax Error"
             alertMethod(mChoices.sytanxMsg.rawValue, mChoices.decMsg.rawValue)
             
             return false
@@ -287,7 +284,6 @@ class BinDecHexController: UIViewController {
     func binaryCheck(_ binNum: String) -> Bool { //This method checks if input is in binary format
         
         if binNum == "" {
-            //    let alertTitle = "Syntax Error"
             alertMethod(mChoices.sytanxMsg.rawValue, mChoices.binMsg.rawValue)
             return false
         }
@@ -295,7 +291,6 @@ class BinDecHexController: UIViewController {
         for c in binNum { //checking if input is in binary syntax, if not 0/1 exit func
             
             if c != "0" && c != "1" {
-                //      let alertTitle = "Syntax Error"//
                 alertMethod(mChoices.sytanxMsg.rawValue, mChoices.binMsg.rawValue)
                 return false //return false if syntax error
             }
