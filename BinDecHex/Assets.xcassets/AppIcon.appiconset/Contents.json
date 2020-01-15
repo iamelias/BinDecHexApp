@@ -3,109 +3,109 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "binarylogo152-7.png",
+      "filename" : "fixedSymbol-15.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "binarylogo152-5.png",
+      "filename" : "fixedSymbol-10.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "binaryapp180.png",
+      "filename" : "fixedSymbol-11.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "binarylogo152-2.png",
+      "filename" : "fixedSymbol-7.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "binarylogo152-4.png",
+      "filename" : "fixedSymbol-8.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "binarylogo152-1.png",
+      "filename" : "fixedSymbol-6.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "binarylogo2118.png",
+      "filename" : "fixedSymbol-3.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "binarylogo170.png",
+      "filename" : "fixedSymbol-2.png",
       "scale" : "3x"
     },
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "binarylogo152-11.png",
+      "filename" : "fixedSymbol-17.png",
       "scale" : "1x"
     },
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "binarylogo152-8.png",
+      "filename" : "fixedSymbol-13.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "binarylogo152-10.png",
+      "filename" : "fixedSymbol-16.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "binarylogo152-6.png",
+      "filename" : "fixedSymbol-12.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "binarylogo152-9.png",
+      "filename" : "fixedSymbol-14.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "binarylogo152-3.png",
+      "filename" : "fixedSymbol-9.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "BinDecHexIcon74.png",
+      "filename" : "fixedSymbol-1.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "binarylogo152.png",
+      "filename" : "fixedSymbol.png",
       "scale" : "2x"
     },
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "binarylogo167.png",
+      "filename" : "fixedSymbol-5.png",
       "scale" : "2x"
     },
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "binarylogo1024.png",
+      "filename" : "fixedSymbol-4.png",
       "scale" : "1x"
     }
   ],
