@@ -111,7 +111,7 @@ class BinDecHexController: UIViewController {
             displayResult("Decimal:",stringDec)
         }
     }
-    
+
     func decToBin() { //Transform decimal to binary with 8 digits //Complete
         
         let retrievedDec = getDecimal()
