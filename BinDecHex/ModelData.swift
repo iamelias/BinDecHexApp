@@ -11,12 +11,6 @@ var UnitChoices: [String] = ["Bin", "Dec", "Hex"]
 var labelDic: [String: Int] = ["Bin": 0, "Dec": 1, "Hex": 2]
 var typeFullName: [String: String] = ["Bin": "Binary", "Dec": "Decimal", "Hex": "Hexadecimal"]
 
-enum Units: String {
-    case Bin = "Binary"
-    case Dec = "Decimal"
-    case Hex = "Hexadecimal"
-}
-
 enum mChoices: String {
     case hexMsg = "Can't convert because input is not in hexadecimal format"
     case binMsg = "Can't convert because input is not in binary format"
@@ -24,3 +18,5 @@ enum mChoices: String {
     case upper = "Input is past upper limit"
     case sytanxMsg = "Syntax Error"
 }
+
+
