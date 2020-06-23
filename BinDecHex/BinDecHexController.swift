@@ -30,7 +30,7 @@ class BinDecHexController: UIViewController {
         retrieveCoreData() //getting persisted data
         //       deleteCoreGroup() //**for testing**
     }
-    
+     
     @IBAction func convertButtonTapped(_ sender: Any) {
         
         controlActivityIndicator(indicatorOn: true)
@@ -245,8 +245,14 @@ class BinDecHexController: UIViewController {
     
     //MARK: FORMAT CHECK METHODS
     func decimalCheck(_ decNum: String) -> Bool {
+
         let checkNum = Int(decNum) //convert passed string to int, won't convert nonint
         if checkNum != nil { //if doesn't convert
+            
+            if checkNum! < 0 {
+                callErrorAlert(alert: (mChoices.sytanxMsg.rawValue, mChoices.decMsg.rawValue))
+                return false
+            }
             
             guard checkNum! < 1000000000 else { //making an upperlimit to users capability
                 callErrorAlert(alert: (mChoices.sytanxMsg.rawValue, mChoices.upper.rawValue))
