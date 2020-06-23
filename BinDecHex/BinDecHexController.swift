@@ -141,6 +141,10 @@ class BinDecHexController: UIViewController {
             callErrorAlert(alert: (mChoices.sytanxMsg.rawValue, mChoices.hexMsg.rawValue))
             return
         }
+        guard hex != "error2" else {
+            callErrorAlert(alert: (mChoices.sytanxMsg.rawValue, mChoices.upper.rawValue))
+            return
+        }
         saveCore(hex.uppercased())
         displayResultView("Hexadecimal: ", hex.uppercased())
     }
