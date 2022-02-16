@@ -18,7 +18,7 @@ class BinDecHexController: UIViewController {
     @IBOutlet weak var fromPickerView: UIPickerView!
     @IBOutlet weak var toPickerView: UIPickerView!
     @IBOutlet weak var resLabel: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    //@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let context = DatabaseController.persistentStoreContainer().viewContext
     var coreFetched: [SavedEntry] = []
@@ -29,6 +29,7 @@ class BinDecHexController: UIViewController {
         initialView()
         retrieveCoreData() //getting persisted data
         //       deleteCoreGroup() //**for testing**
+        inputTextField.isEnabled = false
     }
      
     @IBAction func convertButtonTapped(_ sender: Any) {
@@ -36,18 +37,27 @@ class BinDecHexController: UIViewController {
         controlActivityIndicator(indicatorOn: true)
         
         deleteCoreGroup() //clearing what is currently saved
-        
+
         let checkBool: Bool = true
         switch checkBool {
         case fromLabel.text == "Bin" && toLabel.text == "Dec": binToDec()
+            print("Bin-Dec")
         case fromLabel.text == "Bin" && toLabel.text == "Hex": binToHex()
+            print("Bin-Hex")
         case fromLabel.text == "Bin" && toLabel.text == "Bin": binToBin()
+            print("Bin-Bin")
         case fromLabel.text == "Dec" && toLabel.text == "Bin": decToBin()
+            print("Dec-Bin")
         case fromLabel.text == "Dec" && toLabel.text == "Hex": decToHex()
+            print("Dec-Hex")
         case fromLabel.text == "Dec" && toLabel.text == "Dec": decToDec()
+            print("Dec-Dec")
         case fromLabel.text == "Hex" && toLabel.text == "Bin": hexToBin()
+            print("Hex-Bin")
         case fromLabel.text == "Hex" && toLabel.text == "Dec": hexToDec()
+            print("Hex-Dec")
         case fromLabel.text == "Hex" && toLabel.text == "Hex": hexToHex()
+            print("Hex-Hex")
         default: print("Error") //will never execute decault
         }
     }
@@ -59,6 +69,31 @@ class BinDecHexController: UIViewController {
         saveCore("")
     }
     
+    @IBAction func buttonDidTouch(_ sender: UIButton) {
+        switch sender.tag {
+        case 0: inputTextField.text!.append("0")
+        case 1: inputTextField.text!.append("1")
+        case 2: inputTextField.text!.append("2")
+        case 3: inputTextField.text!.append("3")
+        case 4: inputTextField.text!.append("4")
+        case 5: inputTextField.text!.append("5")
+        case 6: inputTextField.text!.append("6")
+        case 7: inputTextField.text!.append("7")
+        case 8: inputTextField.text!.append("8")
+        case 9: inputTextField.text!.append("9")
+        case 10: inputTextField.text!.append("A")
+        case 11: inputTextField.text!.append("B")
+        case 12: inputTextField.text!.append("C")
+        case 13: inputTextField.text!.append("D")
+        case 14: inputTextField.text!.append("E")
+        case 15: inputTextField.text!.append("F")
+        case 16:inputTextField.text!.append(".")
+        case 17: _ = inputTextField.text!.popLast()
+        default:
+            print("Error")
+        }
+    }
+    
     func setDelegatesDataSources() {
         inputTextField.delegate = self
         fromPickerView.delegate = self
@@ -68,8 +103,8 @@ class BinDecHexController: UIViewController {
     }
     
     func controlActivityIndicator(indicatorOn: Bool) { //true starts/unhides indicator, false stops/hides.
-        activityIndicator.isHidden = !indicatorOn
-        indicatorOn ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+        //activityIndicator.isHidden = !indicatorOn
+//        indicatorOn ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
     
     func padBin(_ binary: String ) -> String { //adds 0s for padding
@@ -94,6 +129,7 @@ class BinDecHexController: UIViewController {
         if let dec = Int(inputTextField.text ?? "", radix: 2) {
             let stringDec = "\(dec)"
             saveCore(stringDec)
+            print("Decimal: \(stringDec)")
             displayResultView("Decimal:",stringDec)
         }
     }
@@ -109,6 +145,7 @@ class BinDecHexController: UIViewController {
         binary = padBin(binary) //padding to the left with 0 until num of binary digits = 8
         
         saveCore(binary)
+        print("Binary: \(binary)")
         displayResultView("Binary:",binary)
     }
     
@@ -122,6 +159,7 @@ class BinDecHexController: UIViewController {
         bin = padBin(bin)
         
         saveCore(bin)
+        print("Binary: \(bin)")
         displayResultView("Binary:",bin)
     }
     
@@ -131,6 +169,7 @@ class BinDecHexController: UIViewController {
             return
         }
         saveCore(dec)
+        print("Decimal: \(dec)")
         displayResultView("Decimal:", dec)
     }
     
@@ -146,6 +185,7 @@ class BinDecHexController: UIViewController {
             return
         }
         saveCore(hex.uppercased())
+        print("Hex: \(hex.uppercased())")
         displayResultView("Hexadecimal: ", hex.uppercased())
     }
     
@@ -156,6 +196,7 @@ class BinDecHexController: UIViewController {
         }
         let hex = String(Int(bin, radix: 2)!, radix: 16) //Convert Binary to Hex
         saveCore(hex.uppercased())
+        print("Hex: \(hex.uppercased())")
         displayResultView("Hexadecimal:",hex.uppercased())
     }
     
@@ -167,6 +208,7 @@ class BinDecHexController: UIViewController {
         let dec = Int(retrievedDec)
         let hex = String(dec!, radix: 16)
         saveCore(hex.uppercased())
+        print("Hex: \(hex.uppercased())")
         displayResultView("Hexadecimal:",hex.uppercased())
     }
     
@@ -183,7 +225,7 @@ class BinDecHexController: UIViewController {
         var bin = String(Int(hex, radix: 16)!, radix: 2)
         bin = padBin(bin)
         saveCore(bin)
-        
+        print("Binary: \(bin)")
         displayResultView("Binary:",bin)
     }
     
@@ -200,6 +242,7 @@ class BinDecHexController: UIViewController {
         let dec = Int(hex, radix: 16)!
         let stringDec = "\(dec)"
         saveCore(stringDec)
+        print("Decimal: \(dec)")
         displayResultView("Decimal:",stringDec)
     }
     

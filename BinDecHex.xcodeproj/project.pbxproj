@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3982E2B527BB37BD00C6D253 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3982E2B427BB37BD00C6D253 /* CustomButton.swift */; };
+		39D8E3FD27BC7A97007FEB22 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8E3FC27BC7A97007FEB22 /* KeyboardButton.swift */; };
 		6422022A24954B2700C98FF0 /* ExtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6422022924954B2700C98FF0 /* ExtView.swift */; };
 		6471230723C4062300447422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471230623C4062300447422 /* AppDelegate.swift */; };
 		6471230B23C4062300447422 /* BinDecHexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471230A23C4062300447422 /* BinDecHexController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3982E2B427BB37BD00C6D253 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		39D8E3FC27BC7A97007FEB22 /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		6422022924954B2700C98FF0 /* ExtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtView.swift; sourceTree = "<group>"; };
 		6471230323C4062300447422 /* BinDecHex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BinDecHex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6471230623C4062300447422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				6471231723C4062500447422 /* Info.plist */,
 				6471230F23C4062300447422 /* BinDecHex.xcdatamodeld */,
 				6471230C23C4062300447422 /* Main.storyboard */,
+				3982E2B427BB37BD00C6D253 /* CustomButton.swift */,
+				39D8E3FC27BC7A97007FEB22 /* KeyboardButton.swift */,
 			);
 			path = BinDecHex;
 			sourceTree = "<group>";
@@ -154,7 +160,9 @@
 				6471230B23C4062300447422 /* BinDecHexController.swift in Sources */,
 				64C77E2823CB057700492A49 /* ModelData.swift in Sources */,
 				6471230723C4062300447422 /* AppDelegate.swift in Sources */,
+				3982E2B527BB37BD00C6D253 /* CustomButton.swift in Sources */,
 				64C3AF2423CA7C5A00F56158 /* SceneDelegate.swift in Sources */,
+				39D8E3FD27BC7A97007FEB22 /* KeyboardButton.swift in Sources */,
 				64C3AF4923CA8E0700F56158 /* DatabaseController.swift in Sources */,
 				6422022A24954B2700C98FF0 /* ExtView.swift in Sources */,
 			);
