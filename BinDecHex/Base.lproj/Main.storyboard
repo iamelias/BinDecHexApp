@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="52o-a0-2EZ">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -13,47 +13,47 @@
             <objects>
                 <viewController id="p8d-0x-CAA" customClass="BinDecHexController" customModule="BinDecHex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oZI-xg-cwf">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Z1Z-VS-hZP">
-                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="804"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0G-e8-sTu">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="240.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="268"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nxu-m1-B19">
-                                                <rect key="frame" x="16" y="2" width="358" height="236.66666666666666"/>
+                                                <rect key="frame" x="16" y="2" width="396" height="264"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8wt-ti-0FA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="173.66666666666666" height="236.66666666666666"/>
+                                                        <rect key="frame" x="0.0" y="11.333333333333329" width="192" height="241.33333333333337"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXN-YM-Qz7">
-                                                                <rect key="frame" x="64.333333333333329" y="0.0" width="44.666666666666671" height="20.333333333333332"/>
+                                                                <rect key="frame" x="73.666666666666671" y="0.0" width="44.666666666666671" height="20.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView tag="1" contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Tdx-E7-14l">
-                                                                <rect key="frame" x="0.0" y="25.333333333333329" width="173.66666666666666" height="211.33333333333337"/>
+                                                                <rect key="frame" x="0.0" y="25.333333333333343" width="192" height="216"/>
                                                             </pickerView>
                                                         </subviews>
                                                     </stackView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FEg-PM-qf0">
-                                                        <rect key="frame" x="173.66666666666666" y="111.33333333333334" width="10.666666666666657" height="14.666666666666671"/>
+                                                        <rect key="frame" x="192" y="125.00000000000001" width="12" height="14.666666666666657"/>
                                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FUm-KI-We0">
-                                                        <rect key="frame" x="184.33333333333337" y="0.0" width="173.66666666666663" height="236.66666666666666"/>
+                                                        <rect key="frame" x="204" y="11.333333333333329" width="192" height="241.33333333333337"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dx-r5-NFy">
-                                                                <rect key="frame" x="64.666666666666657" y="0.0" width="44.666666666666657" height="20.333333333333332"/>
+                                                                <rect key="frame" x="73.666666666666686" y="0.0" width="44.666666666666657" height="20.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView tag="2" contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="okl-LS-dhu">
-                                                                <rect key="frame" x="0.0" y="25.333333333333329" width="173.66666666666666" height="211.33333333333337"/>
+                                                                <rect key="frame" x="0.0" y="25.333333333333343" width="192" height="216"/>
                                                             </pickerView>
                                                         </subviews>
                                                     </stackView>
@@ -73,27 +73,27 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vfp-Qb-Xht">
-                                        <rect key="frame" x="0.0" y="240.66666666666669" width="390" height="240.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="268" width="428" height="268"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Vdo-2p-1JF">
-                                                <rect key="frame" x="16" y="38.666666666666629" width="358" height="163.66666666666666"/>
+                                                <rect key="frame" x="16" y="52.3333333333333" width="396" height="163.66666666666663"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="fak-jD-D4N">
-                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="116"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="396" height="116"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxx-N1-lpc">
-                                                                <rect key="frame" x="132.66666666666666" y="0.0" width="92.666666666666657" height="34"/>
+                                                                <rect key="frame" x="151.66666666666666" y="0.0" width="92.666666666666657" height="34"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0001" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXe-Tk-C3X">
-                                                                <rect key="frame" x="16" y="41" width="326" height="34"/>
+                                                                <rect key="frame" x="16" y="41" width="364" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLd-oO-cwp" customClass="CustomButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="94" y="82" width="170" height="34"/>
+                                                                <rect key="frame" x="113" y="82" width="170" height="34"/>
                                                                 <color key="backgroundColor" red="0.98039215686274506" green="0.81960784313725488" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="cS2-fg-mxo"/>
@@ -113,7 +113,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="giC-RH-4cU">
-                                                        <rect key="frame" x="138.66666666666666" y="123.00000000000001" width="81" height="40.666666666666671"/>
+                                                        <rect key="frame" x="157.66666666666666" y="123.00000000000007" width="81" height="40.666666666666671"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9t-EX-kaq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="20.333333333333332"/>
@@ -122,7 +122,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EKs-no-cPN">
-                                                                <rect key="frame" x="0.0" y="20.333333333333371" width="81" height="20.333333333333329"/>
+                                                                <rect key="frame" x="0.0" y="20.333333333333258" width="81" height="20.333333333333329"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Decimal:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA9-Ns-ekP">
                                                                         <rect key="frame" x="0.0" y="0.0" width="71.333333333333329" height="20.333333333333332"/>
@@ -156,265 +156,276 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHf-lk-czR">
-                                        <rect key="frame" x="0.0" y="481.33333333333343" width="390" height="240.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="536" width="428" height="268"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="u15-Ib-J5X">
-                                                <rect key="frame" x="15" y="0.0" width="359" height="240.66666666666666"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qg5-e1-uaX">
+                                                <rect key="frame" x="16" y="0.0" width="396" height="268"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="w8e-s7-g8z">
-                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="39.333333333333336"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="u15-Ib-J5X">
+                                                        <rect key="frame" x="0.0" y="0.0" width="396" height="268"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANz-Cq-KPS" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="0">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="Jpt-X9-gbd"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47j-XF-xYY" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="120" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="1">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="IB5-Vj-yGb"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3l3-eG-lnL" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="240" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="2">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="SZ3-KS-LQr"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="MmB-vo-iG2">
-                                                        <rect key="frame" x="0.0" y="40.333333333333258" width="359" height="39.333333333333343"/>
-                                                        <subviews>
-                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2K-OK-1H5" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="3">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="jow-Jh-F28"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXn-qG-f96" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="120" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="4">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="wrf-eS-7Cf"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2O-39-tiB" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="240" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="5">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="ynT-ye-qID"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="dIp-AH-5bf">
-                                                        <rect key="frame" x="0.0" y="80.666666666666629" width="359" height="39.333333333333343"/>
-                                                        <subviews>
-                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHH-ne-g3l" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="6">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="J5m-bk-GZm"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arF-l4-28u" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="120" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="7">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="awM-X6-cOx"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNl-uB-vpR" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="240" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="8">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="7gr-Gf-tvB"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="iX1-b6-hPd">
-                                                        <rect key="frame" x="0.0" y="121" width="359" height="39"/>
-                                                        <subviews>
-                                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTe-Ls-XxE" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="119" height="39"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="9">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="Yy3-WK-brE"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXq-0U-P52" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="120" y="0.0" width="119" height="39"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="A">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="Ida-GV-V4m"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoK-zd-wDE" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="240" y="0.0" width="119" height="39"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="B">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="z57-JQ-6BW"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="LUu-hm-PBI">
-                                                        <rect key="frame" x="0.0" y="161" width="359" height="39.333333333333343"/>
-                                                        <subviews>
-                                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4Y-Q0-gni" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="C">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="lCK-ZV-Qr4"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqO-gP-mVp" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="120" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="D">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="94u-xC-blY"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvi-fK-h8t" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="240" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="E">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="iN0-XY-RQ4"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="flJ-Ty-d3q">
-                                                        <rect key="frame" x="0.0" y="201.33333333333326" width="359" height="39.333333333333343"/>
-                                                        <subviews>
-                                                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYk-Lb-OJE" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="F">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="R5X-x2-eD0"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKJ-qi-5Pj" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="120" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title=".">
-                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="3qa-m0-8d4"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pk-j0-pbC" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
-                                                                <rect key="frame" x="240" y="0.0" width="119" height="39.333333333333336"/>
-                                                                <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="delete.backward" catalog="system" title="Delete"/>
-                                                                <connections>
-                                                                    <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="SSm-dj-y4L"/>
-                                                                </connections>
-                                                            </button>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="w8e-s7-g8z">
+                                                                <rect key="frame" x="0.0" y="0.0" width="396" height="44"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANz-Cq-KPS" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="44"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="0">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="Jpt-X9-gbd"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47j-XF-xYY" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="132.33333333333331" y="0.0" width="131.33333333333331" height="44"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="1">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="IB5-Vj-yGb"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3l3-eG-lnL" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="264.66666666666669" y="0.0" width="131.33333333333331" height="44"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="2">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="SZ3-KS-LQr"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="MmB-vo-iG2">
+                                                                <rect key="frame" x="0.0" y="45" width="396" height="43.666666666666657"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2K-OK-1H5" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="43.666666666666664"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="3">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="jow-Jh-F28"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXn-qG-f96" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="132.33333333333331" y="0.0" width="131.33333333333331" height="43.666666666666664"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="4">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="wrf-eS-7Cf"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2O-39-tiB" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="264.66666666666669" y="0.0" width="131.33333333333331" height="43.666666666666664"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="5">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="ynT-ye-qID"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="dIp-AH-5bf">
+                                                                <rect key="frame" x="0.0" y="89.666666666666629" width="396" height="44"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHH-ne-g3l" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="44"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="6">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="J5m-bk-GZm"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arF-l4-28u" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="132.33333333333331" y="0.0" width="131.33333333333331" height="44"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="7">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="awM-X6-cOx"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNl-uB-vpR" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="264.66666666666669" y="0.0" width="131.33333333333331" height="44"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="8">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="7gr-Gf-tvB"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="iX1-b6-hPd">
+                                                                <rect key="frame" x="0.0" y="134.66666666666663" width="396" height="43.666666666666657"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTe-Ls-XxE" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="43.666666666666664"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="9">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="Yy3-WK-brE"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXq-0U-P52" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="132.33333333333331" y="0.0" width="131.33333333333331" height="43.666666666666664"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="A">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="Ida-GV-V4m"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoK-zd-wDE" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="264.66666666666669" y="0.0" width="131.33333333333331" height="43.666666666666664"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="B">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="z57-JQ-6BW"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="LUu-hm-PBI">
+                                                                <rect key="frame" x="0.0" y="179.33333333333337" width="396" height="44"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4Y-Q0-gni" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="44"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="C">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="lCK-ZV-Qr4"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqO-gP-mVp" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="132.33333333333331" y="0.0" width="131.33333333333331" height="44"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="D">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="94u-xC-blY"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvi-fK-h8t" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="264.66666666666669" y="0.0" width="131.33333333333331" height="44"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="E">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="iN0-XY-RQ4"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="flJ-Ty-d3q">
+                                                                <rect key="frame" x="0.0" y="224.33333333333337" width="396" height="43.666666666666686"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYk-Lb-OJE" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="43.666666666666664"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="F">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="R5X-x2-eD0"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKJ-qi-5Pj" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="132.33333333333331" y="0.0" width="131.33333333333331" height="43.666666666666664"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="Clear"/>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="3qa-m0-8d4"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pk-j0-pbC" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
+                                                                        <rect key="frame" x="264.66666666666669" y="0.0" width="131.33333333333331" height="43.666666666666664"/>
+                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" image="delete.backward" catalog="system" title="Delete"/>
+                                                                        <connections>
+                                                                            <action selector="buttonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="SSm-dj-y4L"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                            </stackView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="u15-Ib-J5X" secondAttribute="bottom" id="5iB-LE-9Yn"/>
+                                                    <constraint firstItem="u15-Ib-J5X" firstAttribute="centerX" secondItem="qg5-e1-uaX" secondAttribute="centerX" id="J0f-BF-Le1"/>
+                                                    <constraint firstItem="u15-Ib-J5X" firstAttribute="top" secondItem="qg5-e1-uaX" secondAttribute="top" id="eNF-BN-Jvh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="u15-Ib-J5X" secondAttribute="trailing" id="gkp-tx-qSN"/>
+                                                    <constraint firstItem="u15-Ib-J5X" firstAttribute="leading" secondItem="qg5-e1-uaX" secondAttribute="leading" id="lQ0-fI-VFD"/>
+                                                    <constraint firstItem="u15-Ib-J5X" firstAttribute="centerY" secondItem="qg5-e1-uaX" secondAttribute="centerY" id="uDq-UH-kCg"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="u15-Ib-J5X" secondAttribute="trailing" constant="16" id="8BF-xj-8pl"/>
-                                            <constraint firstItem="u15-Ib-J5X" firstAttribute="top" secondItem="GHf-lk-czR" secondAttribute="top" id="F77-aH-0Sg"/>
-                                            <constraint firstAttribute="bottom" secondItem="u15-Ib-J5X" secondAttribute="bottom" id="XEu-3n-3jy"/>
-                                            <constraint firstItem="u15-Ib-J5X" firstAttribute="centerY" secondItem="GHf-lk-czR" secondAttribute="centerY" id="b6i-QY-ejo"/>
-                                            <constraint firstItem="u15-Ib-J5X" firstAttribute="leading" secondItem="GHf-lk-czR" secondAttribute="leading" constant="15" id="nfI-ec-k3X"/>
+                                            <constraint firstAttribute="bottom" secondItem="qg5-e1-uaX" secondAttribute="bottom" id="E9g-YB-81y"/>
+                                            <constraint firstItem="qg5-e1-uaX" firstAttribute="leading" secondItem="GHf-lk-czR" secondAttribute="leading" constant="16" id="MV9-VV-zVi"/>
+                                            <constraint firstAttribute="trailing" secondItem="qg5-e1-uaX" secondAttribute="trailing" constant="16" id="XH6-4z-Z1w"/>
+                                            <constraint firstItem="qg5-e1-uaX" firstAttribute="top" secondItem="GHf-lk-czR" secondAttribute="top" id="vqH-eE-OZy"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -441,6 +452,7 @@
                         <outlet property="fromLabel" destination="bXN-YM-Qz7" id="EuY-fJ-iIb"/>
                         <outlet property="fromPickerView" destination="Tdx-E7-14l" id="2ic-cq-Atn"/>
                         <outlet property="inputTextField" destination="BXe-Tk-C3X" id="HFU-T8-Ora"/>
+                        <outlet property="keyboardView" destination="qg5-e1-uaX" id="bad-o0-CMP"/>
                         <outlet property="resLabel" destination="dA9-Ns-ekP" id="IwW-Kn-bag"/>
                         <outlet property="resultValueLabel" destination="tl4-il-o2e" id="zWW-ZA-LMn"/>
                         <outlet property="toLabel" destination="5dx-r5-NFy" id="BTp-MT-Vx5"/>
@@ -457,7 +469,7 @@
                 <navigationController title="BinDecHex" automaticallyAdjustsScrollViewInsets="NO" id="52o-a0-2EZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fyG-RB-bii">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -471,11 +483,62 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="3l3-eG-lnL">
+            <size key="intrinsicContentSize" width="32" height="28.333333333333332"/>
+        </designable>
+        <designable name="47j-XF-xYY">
+            <size key="intrinsicContentSize" width="30.333333333333332" height="28.333333333333332"/>
+        </designable>
+        <designable name="9pk-j0-pbC">
+            <size key="intrinsicContentSize" width="89" height="31"/>
+        </designable>
         <designable name="ANz-Cq-KPS">
             <size key="intrinsicContentSize" width="32.333333333333336" height="28.333333333333332"/>
         </designable>
+        <designable name="AXq-0U-P52">
+            <size key="intrinsicContentSize" width="33" height="28.333333333333332"/>
+        </designable>
+        <designable name="Hvi-fK-h8t">
+            <size key="intrinsicContentSize" width="31.666666666666668" height="28.333333333333332"/>
+        </designable>
         <designable name="KLd-oO-cwp">
             <size key="intrinsicContentSize" width="72" height="34"/>
+        </designable>
+        <designable name="NHH-ne-g3l">
+            <size key="intrinsicContentSize" width="32.333333333333336" height="28.333333333333332"/>
+        </designable>
+        <designable name="NoK-zd-wDE">
+            <size key="intrinsicContentSize" width="32.333333333333336" height="28.333333333333332"/>
+        </designable>
+        <designable name="aKJ-qi-5Pj">
+            <size key="intrinsicContentSize" width="58" height="31"/>
+        </designable>
+        <designable name="arF-l4-28u">
+            <size key="intrinsicContentSize" width="31.333333333333332" height="28.333333333333332"/>
+        </designable>
+        <designable name="bqO-gP-mVp">
+            <size key="intrinsicContentSize" width="33" height="28.333333333333332"/>
+        </designable>
+        <designable name="d2K-OK-1H5">
+            <size key="intrinsicContentSize" width="32.333333333333336" height="28.333333333333332"/>
+        </designable>
+        <designable name="eNl-uB-vpR">
+            <size key="intrinsicContentSize" width="32.333333333333336" height="28.333333333333332"/>
+        </designable>
+        <designable name="f4Y-Q0-gni">
+            <size key="intrinsicContentSize" width="33" height="28.333333333333332"/>
+        </designable>
+        <designable name="q2O-39-tiB">
+            <size key="intrinsicContentSize" width="32" height="28.333333333333332"/>
+        </designable>
+        <designable name="rXn-qG-f96">
+            <size key="intrinsicContentSize" width="32.333333333333336" height="28.333333333333332"/>
+        </designable>
+        <designable name="wTe-Ls-XxE">
+            <size key="intrinsicContentSize" width="32.333333333333336" height="28.333333333333332"/>
+        </designable>
+        <designable name="zYk-Lb-OJE">
+            <size key="intrinsicContentSize" width="31.333333333333332" height="28.333333333333332"/>
         </designable>
     </designables>
     <resources>

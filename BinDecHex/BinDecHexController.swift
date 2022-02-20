@@ -33,9 +33,6 @@ class BinDecHexController: UIViewController {
     }
      
     @IBAction func convertButtonTapped(_ sender: Any) {
-        
-        controlActivityIndicator(indicatorOn: true)
-        
         deleteCoreGroup() //clearing what is currently saved
 
         let checkBool: Bool = true
@@ -100,11 +97,6 @@ class BinDecHexController: UIViewController {
         toPickerView.delegate = self
         fromPickerView.dataSource = self
         toPickerView.dataSource = self
-    }
-    
-    func controlActivityIndicator(indicatorOn: Bool) { //true starts/unhides indicator, false stops/hides.
-        //activityIndicator.isHidden = !indicatorOn
-//        indicatorOn ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
     
     func padBin(_ binary: String ) -> String { //adds 0s for padding
@@ -268,16 +260,13 @@ class BinDecHexController: UIViewController {
     
     func getCheckHex() -> String { //Gets and Checks input Hex
         let hex = inputTextField.text!
-        
         if hex == "" {
             return "error"
         }
-        
         if hex.count > 7 {
             return "error2"
         }
         let checkHex = hex.map { $0.isHexDigit}
-        
         for i in 0..<checkHex.count{
             if checkHex[i] == false {
                 return "error"
@@ -296,7 +285,7 @@ class BinDecHexController: UIViewController {
                 callErrorAlert(alert: (mChoices.sytanxMsg.rawValue, mChoices.decMsg.rawValue))
                 return false
             }
-            
+
             guard checkNum! < 1000000000 else { //making an upperlimit to users capability
                 callErrorAlert(alert: (mChoices.sytanxMsg.rawValue, mChoices.upper.rawValue))
                 return false
@@ -336,7 +325,6 @@ class BinDecHexController: UIViewController {
         let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(ok)
         present(alert, animated: true)
-        controlActivityIndicator(indicatorOn: false)
     }
     
     //MARK: CORE DATA METHODS

@@ -9,7 +9,14 @@
 /* Begin PBXBuildFile section */
 		3982E2B527BB37BD00C6D253 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3982E2B427BB37BD00C6D253 /* CustomButton.swift */; };
 		39D8E3FD27BC7A97007FEB22 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8E3FC27BC7A97007FEB22 /* KeyboardButton.swift */; };
-		6422022A24954B2700C98FF0 /* ExtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6422022924954B2700C98FF0 /* ExtView.swift */; };
+		39D8E3FF27BDF61B007FEB22 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8E3FE27BDF61B007FEB22 /* Calculator.swift */; };
+		39D8E40127BDF849007FEB22 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8E40027BDF849007FEB22 /* CalculatorViewModel.swift */; };
+		39D8E40327BDFA57007FEB22 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8E40227BDFA57007FEB22 /* CalculatorTests.swift */; };
+		39D8E40527C09FBD007FEB22 /* CalculatorKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8E40427C09FBD007FEB22 /* CalculatorKeyboard.swift */; };
+		39D8E40727C1C8C4007FEB22 /* KeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8E40627C1C8C4007FEB22 /* KeyboardViewModel.swift */; };
+		39D8E40927C1D828007FEB22 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8E40827C1D828007FEB22 /* KeyboardView.swift */; };
+		39D8E40B27C1DC8A007FEB22 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8E40A27C1DC8A007FEB22 /* Util.swift */; };
+		39D8E40D27C1EE6E007FEB22 /* ExtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8E40C27C1EE6E007FEB22 /* ExtView.swift */; };
 		6471230723C4062300447422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471230623C4062300447422 /* AppDelegate.swift */; };
 		6471230B23C4062300447422 /* BinDecHexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471230A23C4062300447422 /* BinDecHexController.swift */; };
 		6471230E23C4062300447422 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6471230C23C4062300447422 /* Main.storyboard */; };
@@ -24,7 +31,14 @@
 /* Begin PBXFileReference section */
 		3982E2B427BB37BD00C6D253 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		39D8E3FC27BC7A97007FEB22 /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
-		6422022924954B2700C98FF0 /* ExtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtView.swift; sourceTree = "<group>"; };
+		39D8E3FE27BDF61B007FEB22 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		39D8E40027BDF849007FEB22 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		39D8E40227BDFA57007FEB22 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		39D8E40427C09FBD007FEB22 /* CalculatorKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorKeyboard.swift; sourceTree = "<group>"; };
+		39D8E40627C1C8C4007FEB22 /* KeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModel.swift; sourceTree = "<group>"; };
+		39D8E40827C1D828007FEB22 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		39D8E40A27C1DC8A007FEB22 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		39D8E40C27C1EE6E007FEB22 /* ExtView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtView.swift; path = ../../../../../.Trash/ExtView.swift; sourceTree = "<group>"; };
 		6471230323C4062300447422 /* BinDecHex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BinDecHex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6471230623C4062300447422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6471230A23C4062300447422 /* BinDecHexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinDecHexController.swift; sourceTree = "<group>"; };
@@ -52,6 +66,7 @@
 		647122FA23C4062300447422 = {
 			isa = PBXGroup;
 			children = (
+				39D8E40427C09FBD007FEB22 /* CalculatorKeyboard.swift */,
 				6471230523C4062300447422 /* BinDecHex */,
 				6471230423C4062300447422 /* Products */,
 			);
@@ -71,9 +86,14 @@
 				6471230623C4062300447422 /* AppDelegate.swift */,
 				64C3AF2323CA7C5A00F56158 /* SceneDelegate.swift */,
 				6471230A23C4062300447422 /* BinDecHexController.swift */,
+				39D8E40C27C1EE6E007FEB22 /* ExtView.swift */,
+				39D8E40027BDF849007FEB22 /* CalculatorViewModel.swift */,
+				39D8E40627C1C8C4007FEB22 /* KeyboardViewModel.swift */,
+				39D8E3FE27BDF61B007FEB22 /* Calculator.swift */,
+				39D8E40227BDFA57007FEB22 /* CalculatorTests.swift */,
 				64C3AF4823CA8E0700F56158 /* DatabaseController.swift */,
-				6422022924954B2700C98FF0 /* ExtView.swift */,
 				64C77E2723CB057700492A49 /* ModelData.swift */,
+				39D8E40A27C1DC8A007FEB22 /* Util.swift */,
 				6471231223C4062500447422 /* Assets.xcassets */,
 				6471231423C4062500447422 /* LaunchScreen.storyboard */,
 				6471231723C4062500447422 /* Info.plist */,
@@ -81,6 +101,7 @@
 				6471230C23C4062300447422 /* Main.storyboard */,
 				3982E2B427BB37BD00C6D253 /* CustomButton.swift */,
 				39D8E3FC27BC7A97007FEB22 /* KeyboardButton.swift */,
+				39D8E40827C1D828007FEB22 /* KeyboardView.swift */,
 			);
 			path = BinDecHex;
 			sourceTree = "<group>";
@@ -112,7 +133,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = "Elias Hall";
 				TargetAttributes = {
 					6471230223C4062300447422 = {
@@ -157,14 +178,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				6471231123C4062300447422 /* BinDecHex.xcdatamodeld in Sources */,
+				39D8E40327BDFA57007FEB22 /* CalculatorTests.swift in Sources */,
 				6471230B23C4062300447422 /* BinDecHexController.swift in Sources */,
 				64C77E2823CB057700492A49 /* ModelData.swift in Sources */,
+				39D8E40D27C1EE6E007FEB22 /* ExtView.swift in Sources */,
+				39D8E40127BDF849007FEB22 /* CalculatorViewModel.swift in Sources */,
+				39D8E3FF27BDF61B007FEB22 /* Calculator.swift in Sources */,
 				6471230723C4062300447422 /* AppDelegate.swift in Sources */,
+				39D8E40B27C1DC8A007FEB22 /* Util.swift in Sources */,
 				3982E2B527BB37BD00C6D253 /* CustomButton.swift in Sources */,
+				39D8E40727C1C8C4007FEB22 /* KeyboardViewModel.swift in Sources */,
+				39D8E40927C1D828007FEB22 /* KeyboardView.swift in Sources */,
 				64C3AF2423CA7C5A00F56158 /* SceneDelegate.swift in Sources */,
 				39D8E3FD27BC7A97007FEB22 /* KeyboardButton.swift in Sources */,
 				64C3AF4923CA8E0700F56158 /* DatabaseController.swift in Sources */,
-				6422022A24954B2700C98FF0 /* ExtView.swift in Sources */,
+				39D8E40527C09FBD007FEB22 /* CalculatorKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +244,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -277,6 +306,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

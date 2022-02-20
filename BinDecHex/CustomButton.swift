@@ -26,7 +26,7 @@ final class CustomButton: UIButton {
             layer.opacity = isHighlighted ? 0.5 : 1.0
         }
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -40,7 +40,7 @@ final class CustomButton: UIButton {
         self.clipsToBounds = true
         self.layer.cornerRadius = 6.0
         self.layer.borderColor = UIColor.black.cgColor
-        self.layer.borderWidth = 1.0
+        self.layer.borderWidth = 0.5
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.5
         self.layer.shadowRadius = 3.0
