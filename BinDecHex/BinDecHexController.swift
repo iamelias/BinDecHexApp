@@ -17,9 +17,9 @@ class BinDecHexController: UIViewController {
     @IBOutlet weak var toLabel: UILabel!
     @IBOutlet weak var fromPickerView: UIPickerView!
     @IBOutlet weak var toPickerView: UIPickerView!
+    @IBOutlet weak var keyboardView: UIView!
     @IBOutlet weak var resLabel: UILabel!
-    //@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+
     let context = DatabaseController.persistentStoreContainer().viewContext
     var coreFetched: [SavedEntry] = []
     
@@ -30,6 +30,7 @@ class BinDecHexController: UIViewController {
         retrieveCoreData() //getting persisted data
         //       deleteCoreGroup() //**for testing**
         inputTextField.isEnabled = false
+        keyboardConfig()
     }
      
     @IBAction func convertButtonTapped(_ sender: Any) {
@@ -97,6 +98,14 @@ class BinDecHexController: UIViewController {
         toPickerView.delegate = self
         fromPickerView.dataSource = self
         toPickerView.dataSource = self
+    }
+    
+    func keyboardConfig() {
+        keyboardView.layer.cornerRadius = 8.0
+        keyboardView.layer.borderWidth = 0.5
+        keyboardView.layer.borderColor = UIColor.systemGray4.cgColor
+        keyboardView.clipsToBounds = true
+        keyboardView.layer.masksToBounds = true
     }
     
     func padBin(_ binary: String ) -> String { //adds 0s for padding
