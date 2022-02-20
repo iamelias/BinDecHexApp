@@ -21,6 +21,9 @@ class BinDecHexController: UIViewController {
     @IBOutlet weak var resLabel: UILabel!
 
     let context = DatabaseController.persistentStoreContainer().viewContext
+    var calculator = Calculator(fieldText: "", inputPick: "Dec", outputPick: "Dec", resultPresent: false, resultValue: "")
+    var acalculatorVM: CalculatorViewModel?
+    
     var coreFetched: [SavedEntry] = []
     
     override func viewDidLoad() {
@@ -28,8 +31,9 @@ class BinDecHexController: UIViewController {
         setDelegatesDataSources()
         initialView()
         retrieveCoreData() //getting persisted data
+        acalculatorVM = CalculatorViewModel(calculator: calculator)
+        outletConfig()
         //       deleteCoreGroup() //**for testing**
-        inputTextField.isEnabled = false
         keyboardConfig()
     }
      
@@ -90,6 +94,19 @@ class BinDecHexController: UIViewController {
         default:
             print("Error")
         }
+    }
+    
+    func outletConfig() {
+        guard let acalculatorVM = acalculatorVM else {
+            return
+        }
+        inputTextField.text = acalculatorVM.textField
+        fromLabel.text = acalculatorVM.inputPick
+        toLabel.text = acalculatorVM.outputPick
+        fromPickerView.selectedRow(inComponent: labelDic[acalculatorVM.inputPick] ?? 1)
+        toPickerView.selectedRow(inComponent: labelDic[acalculatorVM.outputPick] ?? 1)
+        resLabel.isHidden = acalculatorVM.resultPresent
+        resultValueLabel.text = acalculatorVM.resultValue
     }
     
     func setDelegatesDataSources() {
@@ -284,6 +301,10 @@ class BinDecHexController: UIViewController {
         return hex
     }
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return false
+    }
+    
     //MARK: FORMAT CHECK METHODS
     func decimalCheck(_ decNum: String) -> Bool {
 
@@ -341,6 +362,10 @@ class BinDecHexController: UIViewController {
         let fetchRequest: NSFetchRequest = SavedEntry.fetchRequest() //pulling data from coreData
         do {
             coreFetched = try context.fetch(fetchRequest) //setting fetched result into array
+            guard coreFetched.count == 1 else {
+                return
+            }
+            calculator = Calculator(fieldText: coreFetched[0].fieldText ?? "", inputPick: coreFetched[0].inputPick ?? "Dec", outputPick: coreFetched[0].outputPick ?? "Dec", resultPresent: coreFetched[0].resultPresent, resultValue: coreFetched[0].resultValue ?? "")
         }
         catch{
             print("unable to fetch")
