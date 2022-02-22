@@ -16,7 +16,7 @@ final class KeyboardButton: UIButton {
         super.init(frame: frame)
     }
     
-    @IBInspectable override var isHighlighted: Bool {
+    override var isHighlighted: Bool {
         didSet {
             layer.opacity = isHighlighted ? 0.5 : 1.0
         }
@@ -29,5 +29,4 @@ final class KeyboardButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
     }
-    
 }

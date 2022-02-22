@@ -3,7 +3,9 @@
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -86,23 +88,24 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0001" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXe-Tk-C3X">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0001" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXe-Tk-C3X">
                                                                 <rect key="frame" x="16" y="41" width="364" height="34"/>
+                                                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLd-oO-cwp" customClass="CustomButton" customModule="BinDecHex" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLd-oO-cwp" customClass="ConvertButton" customModule="BinDecHex" customModuleProvider="target">
                                                                 <rect key="frame" x="113" y="82" width="170" height="34"/>
-                                                                <color key="backgroundColor" red="0.98039215686274506" green="0.81960784313725488" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="Convert_Button"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="cS2-fg-mxo"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                                 <state key="normal" title="Convert">
-                                                                    <color key="titleColor" systemColor="darkTextColor"/>
+                                                                    <color key="titleColor" systemColor="labelColor"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="convertButtonTapped:" destination="p8d-0x-CAA" eventType="touchUpInside" id="0QR-uc-C9q"/>
+                                                                    <action selector="convertButtonDidTouch:" destination="p8d-0x-CAA" eventType="touchUpInside" id="x2h-TK-66a"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -168,8 +171,8 @@
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANz-Cq-KPS" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="44"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="0">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -180,8 +183,8 @@
                                                                     </button>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47j-XF-xYY" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="132.33333333333331" y="0.0" width="131.33333333333331" height="44"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="1">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -192,8 +195,8 @@
                                                                     </button>
                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3l3-eG-lnL" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="264.66666666666669" y="0.0" width="131.33333333333331" height="44"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="2">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -209,8 +212,8 @@
                                                                 <subviews>
                                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2K-OK-1H5" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="43.666666666666664"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="3">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -221,8 +224,8 @@
                                                                     </button>
                                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXn-qG-f96" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="132.33333333333331" y="0.0" width="131.33333333333331" height="43.666666666666664"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="4">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -233,8 +236,8 @@
                                                                     </button>
                                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2O-39-tiB" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="264.66666666666669" y="0.0" width="131.33333333333331" height="43.666666666666664"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="5">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -250,8 +253,8 @@
                                                                 <subviews>
                                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHH-ne-g3l" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="44"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="6">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -262,8 +265,8 @@
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arF-l4-28u" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="132.33333333333331" y="0.0" width="131.33333333333331" height="44"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="7">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -274,8 +277,8 @@
                                                                     </button>
                                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNl-uB-vpR" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="264.66666666666669" y="0.0" width="131.33333333333331" height="44"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="8">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -291,8 +294,8 @@
                                                                 <subviews>
                                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTe-Ls-XxE" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="43.666666666666664"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="9">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -303,8 +306,8 @@
                                                                     </button>
                                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXq-0U-P52" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="132.33333333333331" y="0.0" width="131.33333333333331" height="43.666666666666664"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="A">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -315,8 +318,8 @@
                                                                     </button>
                                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoK-zd-wDE" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="264.66666666666669" y="0.0" width="131.33333333333331" height="43.666666666666664"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="B">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -332,8 +335,8 @@
                                                                 <subviews>
                                                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4Y-Q0-gni" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="44"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="C">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -344,8 +347,8 @@
                                                                     </button>
                                                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqO-gP-mVp" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="132.33333333333331" y="0.0" width="131.33333333333331" height="44"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="D">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -356,8 +359,8 @@
                                                                     </button>
                                                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvi-fK-h8t" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="264.66666666666669" y="0.0" width="131.33333333333331" height="44"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="E">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -373,8 +376,8 @@
                                                                 <subviews>
                                                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYk-Lb-OJE" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="43.666666666666664"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="F">
                                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
@@ -385,8 +388,8 @@
                                                                     </button>
                                                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKJ-qi-5Pj" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="132.33333333333331" y="0.0" width="131.33333333333331" height="43.666666666666664"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="Clear"/>
                                                                         <connections>
@@ -395,8 +398,8 @@
                                                                     </button>
                                                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pk-j0-pbC" customClass="KeyboardButton" customModule="BinDecHex" customModuleProvider="target">
                                                                         <rect key="frame" x="264.66666666666669" y="0.0" width="131.33333333333331" height="43.666666666666664"/>
-                                                                        <color key="backgroundColor" red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="tintColor" red="0.20392156859999999" green="0.1647058824" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="Keyboard_Button"/>
+                                                                        <color key="tintColor" name="Keyboard_Text"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" image="delete.backward" catalog="system" title="Delete"/>
                                                                         <connections>
@@ -431,7 +434,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zE8-bs-SEg"/>
-                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="zE8-bs-SEg" firstAttribute="bottom" secondItem="Z1Z-VS-hZP" secondAttribute="bottom" id="C9I-cb-hog"/>
                             <constraint firstItem="Z1Z-VS-hZP" firstAttribute="leading" secondItem="zE8-bs-SEg" secondAttribute="leading" id="QjE-eR-qt9"/>
@@ -441,9 +444,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="BinDecHex" id="3ZG-lv-S1Y">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Kmc-Vl-Sjl">
-                            <color key="tintColor" red="0.45882352941176469" green="0.32941176470588235" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" name="Refresh_Button"/>
                             <connections>
-                                <action selector="refreshTapped:" destination="p8d-0x-CAA" id="q9v-Fr-hgD"/>
+                                <action selector="refreshButtonDidTouch:" destination="p8d-0x-CAA" id="CzM-fz-YJ0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -543,8 +546,26 @@
     <resources>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="delete.backward" catalog="system" width="128" height="104"/>
-        <systemColor name="darkTextColor">
+        <namedColor name="Background">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Convert_Button">
+            <color red="0.98039215686274506" green="0.81960784313725488" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Keyboard_Button">
+            <color red="0.8901960784313725" green="0.85098039215686272" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Keyboard_Text">
+            <color red="0.20392156862745098" green="0.16470588235294117" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Refresh_Button">
+            <color red="0.45882352941176469" green="0.32941176470588235" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

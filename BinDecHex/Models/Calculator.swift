@@ -13,6 +13,6 @@ struct Calculator {
     var fieldText: String
     var inputPick: String
     var outputPick: String
-    var resultPresent: Bool
+    var resultHidden: Bool
     var resultValue: String
 }
