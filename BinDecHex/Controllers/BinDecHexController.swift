@@ -27,21 +27,21 @@ class BinDecHexController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textFieldConfig()
+        keyboardConfig()
         retrieveCoreData() //getting persisted data
         calculatorVM = CalculatorViewModel(calculator: calculator)
         setDelegatesDataSources()
         outletViewConfig()
-        inputTextField.layer.cornerRadius = 8.0
         //       deleteCoreGroup() //**for testing**
-        keyboardConfig()
     }
     
     @IBAction func convertButtonDidTouch(_ sender: Any) {
-        calculatorVM?.getFormat()
+        calculatorVM?.convertFormat()
     }
     
     //MARK: IBACTIONS
-    @IBAction func refreshButtonDidTouch(_ sender: Any) { //refreshing everything to default settings
+    @IBAction func refreshButtonDidTouch(_ sender: Any) { //Refreshing view to blank default setting
         calculatorVM?.refresh()
         inputTextField.text = calculatorVM?.textField
         fromLabel.text = calculatorVM?.inputPick
@@ -55,7 +55,7 @@ class BinDecHexController: UIViewController {
         saveCore()
     }
     
-    @IBAction func buttonDidTouch(_ sender: UIButton) {
+    @IBAction func buttonDidTouch(_ sender: UIButton) { //Appends character to textfield
         switch sender.tag {
         case 0: calculatorVM?.appendText(text: "0")
         case 1: calculatorVM?.appendText(text: "1")
@@ -79,7 +79,7 @@ class BinDecHexController: UIViewController {
         }
     }
     
-    func outletViewConfig() {
+    func outletViewConfig() { //Updating IBOutlets with calculator view model's settings
         guard let calculatorVM = calculatorVM else {
             return
         }
@@ -94,7 +94,6 @@ class BinDecHexController: UIViewController {
     }
     
     func setDelegatesDataSources() {
-        inputTextField.delegate = self
         fromPickerView.delegate = self
         toPickerView.delegate = self
         fromPickerView.dataSource = self
@@ -102,32 +101,29 @@ class BinDecHexController: UIViewController {
         calculatorVM?.delegate = self
     }
     
-    func keyboardConfig() {
+    func keyboardConfig() { //Settings for Keyboard UIView
         keyboardView.layer.cornerRadius = 8.0
-       // keyboardView.layer.borderWidth = 0.5
-       // keyboardView.layer.borderColor = UIColor.systemGray4.cgColor
         keyboardView.clipsToBounds = true
         keyboardView.layer.masksToBounds = true
     }
     
-    func hapticError() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.error)
+    func textFieldConfig() {
+        inputTextField.layer.cornerRadius = 8.0
     }
-    
+
     //MARK: CONVERSION METHODS
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool { //Removing textfield's cursor and keyboard
         return false
     }
     
     //MARK: ALERT METHODS
-    func callErrorAlert(alert: InputError) { //creating alert that includes error method calls
-        inputTextField.shake()
-        hapticError()
+    func callErrorAlert(alert: InputError) { //This is an error handler, gets called when there is a conversion error
+        inputTextField.shake() //A shake textfield animation
+        Util.hapticError()
         createAlert(details: alert)
     }
     
-    func createAlert(details: InputError) { // Error alert
+    func createAlert(details: InputError) { //Creating the error alert message
         let alert = UIAlertController(title: details.title, message: details.message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(ok)
@@ -135,7 +131,7 @@ class BinDecHexController: UIViewController {
     }
     
     //MARK: CORE DATA METHODS
-    func retrieveCoreData() { //retrieving persisted data from Core Data
+    func retrieveCoreData() { //Retrieving persisted calculator
         guard let context = context else {
             return
         }
@@ -148,7 +144,7 @@ class BinDecHexController: UIViewController {
                 print(i.resultValue)
             }
             print(coreFetched.count)
-            if let lastElement = coreFetched.last {
+            if let lastElement = coreFetched.last { //Creating the Calculator object
                 calculator = Calculator(fieldText: lastElement.fieldText ?? "", inputPick: lastElement.inputPick ?? "Dec", outputPick: lastElement.outputPick ?? "Dec", resultHidden: lastElement.resultHidden, resultValue: lastElement.resultValue ?? "")
             }
         }
@@ -160,7 +156,7 @@ class BinDecHexController: UIViewController {
         }
     }
     
-    func deleteCoreGroup() { //deletes the saved data from core data
+    func deleteCoreGroup() { //Deleting persisted data for new data or refresh
         guard let context = context else {
             return
         }
@@ -175,7 +171,7 @@ class BinDecHexController: UIViewController {
             print(error.localizedDescription)
         }
     }
-    func saveCore() { // saving data to core data will be added when convert buttton is pressed
+    func saveCore() { // Saving CoreCalculator core data
         guard let context = context else {
             print("Save Error")
             return
@@ -198,17 +194,9 @@ class BinDecHexController: UIViewController {
 }
 
 //MARK: EXTENSIONS
-//MARK: TEXTFIELD DELEGATE METHODS
-extension BinDecHexController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        inputTextField.resignFirstResponder()
-        return true
-    }
-}
-
 //MARK: VIEW EXTENSIONS
 extension UITextField {
-    func shake() { //setting up shake animation for alert error
+    func shake() { //Setting up shake animation for alert error
         let animation = CABasicAnimation(keyPath: "position")
         animation.repeatCount = 2
         animation.duration = 0.05
@@ -234,11 +222,11 @@ extension BinDecHexController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView.tag == 1 {
+        if pickerView.tag == 1 { //Left Picker
             fromLabel.text = unitChoices[row]
             calculatorVM?.setInputPick(input: unitChoices[row])
         }
-        else if pickerView.tag == 2 {
+        else if pickerView.tag == 2 { //Right Picker
             toLabel.text = unitChoices[row]
             calculatorVM?.setOutputPick(input: unitChoices[row])
         }
@@ -247,17 +235,17 @@ extension BinDecHexController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 //MARK: VIEW MODEL DELEGATE METHODS
 extension BinDecHexController: CalculatorViewModelDelegate {
-    func didUpdateTextField(textField: String) {
+    func didUpdateTextField(textField: String) { //Changing the textfield
         inputTextField.text = textField
     }
     
     func didGetError(errorType: InputError) {
         inputTextField.shake()
-        hapticError()
+        Util.hapticError()
         createAlert(details: errorType)
     }
     
-    func didConvert() {
+    func didConvert() { //Updates when conversion is successful
         guard let calculatorVM = calculatorVM else {
             return
         }

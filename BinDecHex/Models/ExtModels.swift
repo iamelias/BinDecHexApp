@@ -8,6 +8,8 @@
 
 import Foundation
 
+//MARK: REUSABLE CONSTANTS/MODELS
+
 var unitChoices: [String] = ["Bin", "Dec", "Hex"]
 var unitIndexDict: [String: Int] = ["Bin": 0, "Dec": 1, "Hex": 2]
 var unitFullNameDict: [String: String] = ["Bin": "Binary", "Dec": "Decimal", "Hex": "Hexadecimal"]

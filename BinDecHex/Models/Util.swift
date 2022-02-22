@@ -16,11 +16,11 @@ class Util {
         generator.notificationOccurred(.error)
     }
 
-    static func decimalCheck(_ decNum: String) throws -> Bool {
+    static func decimalCheck(_ decNum: String) throws -> Bool { //Verifying that dec input is in correct format
         if decNum == "" {
             throw FormatError.blankError
         }
-        let checkNum = Int(decNum) //convert passed string to int, won't convert non-int
+        let checkNum = Int(decNum) //Convert passed string to int, won't convert non-int characters ex. 'a'
         if let checkNum = checkNum {
             if checkNum > 1000000000 {
                 throw FormatError.upperLimitError
@@ -32,11 +32,11 @@ class Util {
         }
     }
 
-    static func binaryCheck(_ binNum: String) throws -> Bool { //This method checks if input is in binary format
+    static func binaryCheck(_ binNum: String) throws -> Bool { //Verifying that bin input is in correct format
         if binNum == "" {
             throw FormatError.blankError
         }
-        for c in binNum { //checking if input is in binary syntax, if not 0/1 exit func
+        for c in binNum { //If char is not 0/1, throw error
             if c != "0" && c != "1" {
                 throw FormatError.binError
             }

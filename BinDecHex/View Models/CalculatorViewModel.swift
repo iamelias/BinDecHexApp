@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CalculatorViewModel: ObservableObject {
+class CalculatorViewModel {
 
     var calculator: Calculator!
     
@@ -79,7 +79,7 @@ class CalculatorViewModel: ObservableObject {
         calculator.resultHidden = true
     }
 
-    func getFormat() {
+    func convertFormat() {
         let checkBool: Bool = true
         switch checkBool {
         case inputPick == "Bin" && outputPick == "Dec": binToDec()
@@ -91,20 +91,20 @@ class CalculatorViewModel: ObservableObject {
         case inputPick == "Hex" && outputPick == "Bin": hexToBin()
         case inputPick == "Hex" && outputPick == "Dec": hexToDec()
         case inputPick == "Hex" && outputPick == "Hex": hexToHex()
-        default: print("Error") //will never execute decault
+        default: print("Error") //will never execute default
         }
     }
     
-    func padBin(_ binary: String ) -> String { //adds 0s for padding
+    func padBin(_ binary: String ) -> String { //Adds 0s to pad to 8 characters
         var editBinary = binary
-        while editBinary.count < 8 { //while num of elements in binary is not equal to 8...
-            editBinary = "0\(editBinary)" //add a 0 to beginning of string
+        while editBinary.count < 8 {
+            editBinary = "0\(editBinary)"
         }
         return editBinary
     }
 
     //MARK: VIEW CONVERSION METHODS
-    func binToDec() { //Complete
+    func binToDec() {
         let error = checkBinaryError(input: textField)
         if let error = error {
             let inputError = InputError(errorType: error, title: "Input Error", message: error.rawValue)
@@ -118,7 +118,7 @@ class CalculatorViewModel: ObservableObject {
         }
     }
 
-    func decToBin() { //Transform decimal to binary with 8 digits //Complete
+    func decToBin() {
         let error = checkDecimalError(input: textField)
         
         if let error = error {
@@ -231,10 +231,10 @@ class CalculatorViewModel: ObservableObject {
             delegate?.didConvert()
         }
     }
-
+    //MARK: CORRECT FORMAT CHECKERS
     func checkBinaryError(input: String ) -> FormatError? {
         do {
-         _ = try Util.binaryCheck(input) //checking input syntax
+         _ = try Util.binaryCheck(input) //Calls the static throwable func in Util class
         }
         catch(FormatError.blankError) {
             return FormatError.blankError
@@ -267,7 +267,7 @@ class CalculatorViewModel: ObservableObject {
         return nil
     }
 
-    func checkHexadecimalError(input: String) -> FormatError? { //Gets and Checks input Hex
+    func checkHexadecimalError(input: String) -> FormatError? {
         do {
             _ = try Util.hexadecimalCheck(input)
         }
