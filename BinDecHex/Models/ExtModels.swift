@@ -18,7 +18,7 @@ enum FormatError: String,Error {
     case binError = "Error: Input must be binary format"
     case decError = "Error: Input must be in decimal format"
     case hexError = "Error: Input must be in hexadecimal format"
-    case upperLimitError = "Error: Input is past upper limit"
+    case upperLimitError = "Error: Input is past the character limit"
     case blankError = "Error: Please enter your input"
     case syntaxError = "Error: Input Error"
 }

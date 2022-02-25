@@ -114,28 +114,30 @@ class BinDecHexTests: XCTestCase {
         XCTAssertNoThrow(try Util.decimalCheck("999999999"))
         XCTAssertNoThrow(try Util.decimalCheck("1000000000"))
         XCTAssertNoThrow(try Util.decimalCheck("0"))
-        
+
         XCTAssertThrowsError(try Util.decimalCheck("")) //will throw blank error
         XCTAssertThrowsError(try Util.decimalCheck("1000000001")) //will throw upper limit error
+        XCTAssertThrowsError(try Util.decimalCheck("00000000000000000000000")) //will throw upper limit error
         XCTAssertThrowsError(try Util.decimalCheck("A")) //will throw format error
         XCTAssertThrowsError(try Util.decimalCheck("4A"))
         XCTAssertThrowsError(try Util.decimalCheck("C2312EFF"))
-        
+
         //to fail
-        //        XCTAssertThrowsError(try Util.decimalCheck("01"))
-        //        XCTAssertThrowsError(try Util.decimalCheck("12"))
-        //        XCTAssertThrowsError(try Util.decimalCheck("45"))
-        //        XCTAssertThrowsError(try Util.decimalCheck("3444444"))
-        //        XCTAssertThrowsError(try Util.decimalCheck("100010001"))
-        //        XCTAssertThrowsError(try Util.decimalCheck("999999999"))
-        //        XCTAssertThrowsError(try Util.decimalCheck("1000000000"))
-        //        XCTAssertThrowsError(try Util.decimalCheck("0"))
-        //
-        //        XCTAssertNoThrow(try Util.decimalCheck(""))
-        //        XCTAssertNoThrow(try Util.decimalCheck("1000000001"))
-        //        XCTAssertNoThrow(try Util.decimalCheck("A"))
-        //        XCTAssertNoThrow(try Util.decimalCheck("4A"))
-        //        XCTAssertNoThrow(try Util.decimalCheck("C2312EFF"))
+//                XCTAssertThrowsError(try Util.decimalCheck("01"))
+//                XCTAssertThrowsError(try Util.decimalCheck("12"))
+//                XCTAssertThrowsError(try Util.decimalCheck("45"))
+//                XCTAssertThrowsError(try Util.decimalCheck("3444444"))
+//                XCTAssertThrowsError(try Util.decimalCheck("100010001"))
+//                XCTAssertThrowsError(try Util.decimalCheck("999999999"))
+//                XCTAssertThrowsError(try Util.decimalCheck("1000000000"))
+//                XCTAssertThrowsError(try Util.decimalCheck("0"))
+//
+//                XCTAssertNoThrow(try Util.decimalCheck(""))
+//                XCTAssertNoThrow(try Util.decimalCheck("1000000001"))
+//                XCTAssertNoThrow(try Util.decimalCheck("00000000000000000000000"))
+//                XCTAssertNoThrow(try Util.decimalCheck("A"))
+//                XCTAssertNoThrow(try Util.decimalCheck("4A"))
+//                XCTAssertNoThrow(try Util.decimalCheck("C2312EFF"))
     }
     
     func testHexadecimalCheck() {

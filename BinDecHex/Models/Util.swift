@@ -21,7 +21,7 @@ class Util {
         }
         let checkNum = Int(decNum) //Convert passed string to int, won't convert non-int characters ex. 'a'
         if let checkNum = checkNum {
-            if checkNum > 1000000000 {
+            if checkNum > 1000000000 || decNum.count >= 23 {
                 throw FormatError.upperLimitError
             }
             return true
@@ -39,6 +39,9 @@ class Util {
             if c != "0" && c != "1" {
                 throw FormatError.binError
             }
+        }
+        if binNum.count >= 23 {
+            throw FormatError.upperLimitError
         }
         return true
     }

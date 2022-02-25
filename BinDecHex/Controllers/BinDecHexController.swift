@@ -138,10 +138,6 @@ class BinDecHexController: UIViewController {
             guard coreFetched.count > 0 else {
                 return
             }
-            for i in coreFetched {
-                print(i.resultValue)
-            }
-            print(coreFetched.count)
             if let lastElement = coreFetched.last { //Creating the Calculator object
                 calculator = Calculator(fieldText: lastElement.fieldText ?? "", inputPick: lastElement.inputPick ?? "Dec", outputPick: lastElement.outputPick ?? "Dec", resultHidden: lastElement.resultHidden, resultValue: lastElement.resultValue ?? "")
             }

@@ -242,6 +242,9 @@ class CalculatorViewModel {
         catch (FormatError.binError) {
             return FormatError.binError
         }
+        catch(FormatError.upperLimitError) {
+            return FormatError.upperLimitError
+        }
         catch {
             return FormatError.syntaxError
         }
