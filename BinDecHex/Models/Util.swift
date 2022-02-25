@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class Util {
-    
     static func hapticError() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.error)

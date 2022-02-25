@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3982E2B527BB37BD00C6D253 /* ConvertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3982E2B427BB37BD00C6D253 /* ConvertButton.swift */; };
 		39CF0E9D27C56AAF000C1F8C /* CalculatorViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CF0E9C27C56AAF000C1F8C /* CalculatorViewModelDelegate.swift */; };
+		39CF0EA527C5B2CB000C1F8C /* BinDecHexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CF0EA427C5B2CB000C1F8C /* BinDecHexTests.swift */; };
 		39D8E3FD27BC7A97007FEB22 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8E3FC27BC7A97007FEB22 /* KeyboardButton.swift */; };
 		39D8E3FF27BDF61B007FEB22 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8E3FE27BDF61B007FEB22 /* Calculator.swift */; };
 		39D8E40127BDF849007FEB22 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8E40027BDF849007FEB22 /* CalculatorViewModel.swift */; };
@@ -24,9 +25,21 @@
 		64C77E2823CB057700492A49 /* ExtModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C77E2723CB057700492A49 /* ExtModels.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		39CF0EA627C5B2CB000C1F8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 647122FB23C4062300447422 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6471230223C4062300447422;
+			remoteInfo = BinDecHex;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		3982E2B427BB37BD00C6D253 /* ConvertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertButton.swift; sourceTree = "<group>"; };
 		39CF0E9C27C56AAF000C1F8C /* CalculatorViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModelDelegate.swift; sourceTree = "<group>"; };
+		39CF0EA227C5B2CB000C1F8C /* BinDecHexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinDecHexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		39CF0EA427C5B2CB000C1F8C /* BinDecHexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinDecHexTests.swift; sourceTree = "<group>"; };
 		39D8E3FC27BC7A97007FEB22 /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		39D8E3FE27BDF61B007FEB22 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		39D8E40027BDF849007FEB22 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
@@ -45,6 +58,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		39CF0E9F27C5B2CB000C1F8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6471230023C4062300447422 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -94,10 +114,19 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
+		39CF0EA327C5B2CB000C1F8C /* BinDecHexTests */ = {
+			isa = PBXGroup;
+			children = (
+				39CF0EA427C5B2CB000C1F8C /* BinDecHexTests.swift */,
+			);
+			path = BinDecHexTests;
+			sourceTree = "<group>";
+		};
 		647122FA23C4062300447422 = {
 			isa = PBXGroup;
 			children = (
 				6471230523C4062300447422 /* BinDecHex */,
+				39CF0EA327C5B2CB000C1F8C /* BinDecHexTests */,
 				6471230423C4062300447422 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				6471230323C4062300447422 /* BinDecHex.app */,
+				39CF0EA227C5B2CB000C1F8C /* BinDecHexTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +159,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		39CF0EA127C5B2CB000C1F8C /* BinDecHexTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39CF0EA827C5B2CB000C1F8C /* Build configuration list for PBXNativeTarget "BinDecHexTests" */;
+			buildPhases = (
+				39CF0E9E27C5B2CB000C1F8C /* Sources */,
+				39CF0E9F27C5B2CB000C1F8C /* Frameworks */,
+				39CF0EA027C5B2CB000C1F8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39CF0EA727C5B2CB000C1F8C /* PBXTargetDependency */,
+			);
+			name = BinDecHexTests;
+			productName = BinDecHexTests;
+			productReference = 39CF0EA227C5B2CB000C1F8C /* BinDecHexTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6471230223C4062300447422 /* BinDecHex */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6471231A23C4062500447422 /* Build configuration list for PBXNativeTarget "BinDecHex" */;
@@ -152,10 +200,14 @@
 		647122FB23C4062300447422 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = "Elias Hall";
 				TargetAttributes = {
+					39CF0EA127C5B2CB000C1F8C = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 6471230223C4062300447422;
+					};
 					6471230223C4062300447422 = {
 						CreatedOnToolsVersion = 11.3;
 					};
@@ -175,11 +227,19 @@
 			projectRoot = "";
 			targets = (
 				6471230223C4062300447422 /* BinDecHex */,
+				39CF0EA127C5B2CB000C1F8C /* BinDecHexTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		39CF0EA027C5B2CB000C1F8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6471230123C4062300447422 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,6 +253,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		39CF0E9E27C5B2CB000C1F8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39CF0EA527C5B2CB000C1F8C /* BinDecHexTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		647122FF23C4062300447422 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,6 +282,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		39CF0EA727C5B2CB000C1F8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6471230223C4062300447422 /* BinDecHex */;
+			targetProxy = 39CF0EA627C5B2CB000C1F8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		6471230C23C4062300447422 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -234,6 +310,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		39CF0EA927C5B2CB000C1F8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KFS7JDA8K2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = elias.hall.personal.BinDecHexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BinDecHex.app/BinDecHex";
+			};
+			name = Debug;
+		};
+		39CF0EAA27C5B2CB000C1F8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KFS7JDA8K2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = elias.hall.personal.BinDecHexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BinDecHex.app/BinDecHex";
+			};
+			name = Release;
+		};
 		6471231823C4062500447422 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -397,6 +511,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		39CF0EA827C5B2CB000C1F8C /* Build configuration list for PBXNativeTarget "BinDecHexTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39CF0EA927C5B2CB000C1F8C /* Debug */,
+				39CF0EAA27C5B2CB000C1F8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		647122FE23C4062300447422 /* Build configuration list for PBXProject "BinDecHex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

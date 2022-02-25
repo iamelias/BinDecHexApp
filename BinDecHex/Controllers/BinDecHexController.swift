@@ -38,6 +38,8 @@ class BinDecHexController: UIViewController {
     
     @IBAction func convertButtonDidTouch(_ sender: Any) {
         calculatorVM?.convertFormat()
+//        print(calculator.fieldText)
+//        print(calculatorVM?.textField)
     }
     
     //MARK: IBACTIONS
@@ -98,6 +100,7 @@ class BinDecHexController: UIViewController {
         toPickerView.delegate = self
         fromPickerView.dataSource = self
         toPickerView.dataSource = self
+        inputTextField.delegate = self
         calculatorVM?.delegate = self
     }
     
@@ -111,11 +114,6 @@ class BinDecHexController: UIViewController {
         inputTextField.layer.cornerRadius = 8.0
     }
 
-    //MARK: CONVERSION METHODS
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool { //Removing textfield's cursor and keyboard
-        return false
-    }
-    
     //MARK: ALERT METHODS
     func callErrorAlert(alert: InputError) { //This is an error handler, gets called when there is a conversion error
         inputTextField.shake() //A shake textfield animation
@@ -184,7 +182,6 @@ class BinDecHexController: UIViewController {
         coreSave.resultHidden = calculatorVM?.resultHidden ?? true
         coreSave.resultLabel = calculatorVM?.resultLabel
         do {
-            print("try save called")
             try context.save()
         } catch {
             print("Core add error")
@@ -204,6 +201,13 @@ extension UITextField {
         animation.fromValue = CGPoint(x: self.center.x - 4.0, y: self.center.y)
         animation.toValue = CGPoint(x: self.center.x + 4.0, y: self.center.y)
         layer.add(animation, forKey: "position")
+    }
+}
+
+//MARK: TEXTFIELD DELEGATE METHODS
+extension BinDecHexController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool { //Removing textfield's cursor and keyboard
+        return false
     }
 }
 
