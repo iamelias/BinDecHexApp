@@ -9,11 +9,11 @@
 import Foundation
 
 class CalculatorViewModel {
-
+    
     var calculator: Calculator!
     
     weak var delegate: CalculatorViewModelDelegate?
-
+    
     enum State {
         case detailed, blank
     }
@@ -25,9 +25,9 @@ class CalculatorViewModel {
             return .detailed
         }
     }
-      
+    
     var textField: String {
-          return self.calculator.fieldText
+        return self.calculator.fieldText
     }
     var inputPick: String {
         return self.calculator.inputPick
@@ -38,29 +38,29 @@ class CalculatorViewModel {
     var resultHidden: Bool {
         return self.calculator.resultHidden
     }
-
+    
     var resultValue: String {
         return self.calculator.resultValue
     }
     var resultLabel: String {
         return "\(unitFullNameDict[outputPick] ?? ""): "
     }
-
+    
     public init(calculator: Calculator) {
         self.calculator = calculator
     }
     
-     func appendText(text: Character) {
+    func appendText(text: Character) {
         calculator.fieldText.append(text)
-         delegate?.didUpdateTextField(textField: textField)
+        delegate?.didUpdateTextField(textField: textField)
     }
-     func clearText() {
+    func clearText() {
         calculator.fieldText.removeAll()
-         delegate?.didUpdateTextField(textField: textField)
+        delegate?.didUpdateTextField(textField: textField)
     }
-     func popText() {
+    func popText() {
         _ = calculator.fieldText.popLast()
-         delegate?.didUpdateTextField(textField: textField)
+        delegate?.didUpdateTextField(textField: textField)
     }
     
     func setInputPick(input: String) {
@@ -78,7 +78,7 @@ class CalculatorViewModel {
         calculator.fieldText = ""
         calculator.resultHidden = true
     }
-
+    
     func convertFormat() {
         let checkBool: Bool = true
         switch checkBool {
@@ -102,7 +102,7 @@ class CalculatorViewModel {
         }
         return editBinary
     }
-
+    
     //MARK: VIEW CONVERSION METHODS
     func binToDec() {
         let error = checkBinaryError(input: textField)
@@ -117,7 +117,7 @@ class CalculatorViewModel {
             }
         }
     }
-
+    
     func decToBin() {
         let error = checkDecimalError(input: textField)
         
@@ -134,7 +134,7 @@ class CalculatorViewModel {
             }
         }
     }
-
+    
     func binToBin() {
         let error = checkBinaryError(input: textField)
         if let error = error {
@@ -146,7 +146,7 @@ class CalculatorViewModel {
             delegate?.didConvert()
         }
     }
-
+    
     func decToDec() {
         let error = checkDecimalError(input: textField)
         if let error = error {
@@ -158,83 +158,86 @@ class CalculatorViewModel {
             delegate?.didConvert()
         }
     }
-
-    func hexToHex() {
-        let error = checkHexadecimalError(input: textField)
-        if let error = error {
-            let inputError = InputError(errorType: error, title: "Input Error", message: error.rawValue)
-            delegate?.didGetError(errorType: inputError)
-        } else {
-        calculator.resultHidden = false
-            calculator.resultValue = textField
-            delegate?.didConvert()
-        }
-    }
-
+    
     func binToHex() {
         let error = checkBinaryError(input: textField)
         if let error = error {
             let inputError = InputError(errorType: error, title: "Input Error", message: error.rawValue)
             delegate?.didGetError(errorType: inputError)
         } else {
-        let hex = String(Int(textField, radix: 2)!, radix: 16) //Convert Binary to Hex
-        calculator.resultHidden = false
-        calculator.resultValue = hex.uppercased()
+            let hex = String(Int(textField, radix: 2)!, radix: 16) //Convert Binary to Hex
+            calculator.resultHidden = false
+            calculator.resultValue = hex.uppercased()
             delegate?.didConvert()
         }
     }
-
+    
     func decToHex() {
         let error = checkDecimalError(input: textField)
         if let error = error {
             let inputError = InputError(errorType: error, title: "Input Error", message: error.rawValue)
             delegate?.didGetError(errorType: inputError)
         } else {
-        let dec = Int(textField)
+            let dec = Int(textField)
             if let dec = dec {
-        let hex = String(dec, radix: 16)
-        calculator.resultHidden = false
-        calculator.resultValue = hex.uppercased()
+                let hex = String(dec, radix: 16)
+                calculator.resultHidden = false
+                calculator.resultValue = hex.uppercased()
                 delegate?.didConvert()
             }
         }
     }
-
+    
     func hexToBin() {
         let error = checkHexadecimalError(input: textField)
         if let error = error {
             let inputError = InputError(errorType: error, title: "Input Error", message: error.rawValue)
             delegate?.didGetError(errorType: inputError)
-        }
-        var bin:String?
-        let intInput = Int(textField, radix: 16) //first converting Hexadecimal(16) to Integer(10)
-        if let intInput = intInput {
-         bin = String(intInput, radix: 2) // then converting Integer(10) to a Binary(2) String
-        }
-        if let bin = bin {
-        calculator.resultHidden = false
-        calculator.resultValue = padBin(bin)
-            delegate?.didConvert()
+        } else {
+            var bin:String?
+            let intInput = Int(textField, radix: 16) //first converting Hexadecimal(16) to Integer(10)
+            if let intInput = intInput {
+                bin = String(intInput, radix: 2) // then converting Integer(10) to a Binary(2) String
+            }
+            if let bin = bin {
+                calculator.resultHidden = false
+                calculator.resultValue = padBin(bin)
+                delegate?.didConvert()
+            }
         }
     }
-
+    
     func hexToDec() {
         let error = checkHexadecimalError(input: textField)
         if let error = error {
             let inputError = InputError(errorType: error, title: "Input Error", message: error.rawValue)
             delegate?.didGetError(errorType: inputError)
+        } else {
+            let dec = Int(textField, radix: 16)
+            if let dec = dec {
+                calculator.resultHidden = false
+                calculator.resultValue = "\(dec)"
+                delegate?.didConvert()
+            }
         }
-        let dec = Int(textField, radix: 16)
-        if let dec = dec {
-        calculator.resultHidden = false
-        calculator.resultValue = "\(dec)"
+    }
+    
+    func hexToHex() {
+        let error = checkHexadecimalError(input: textField)
+        if let error = error {
+            let inputError = InputError(errorType: error, title: "Input Error", message: error.rawValue)
+            delegate?.didGetError(errorType: inputError)
+        } else {
+            calculator.resultHidden = false
+            calculator.resultValue = textField
             delegate?.didConvert()
         }
     }
+    
     //MARK: CORRECT FORMAT CHECKERS
     func checkBinaryError(input: String ) -> FormatError? {
         do {
-         _ = try Util.binaryCheck(input) //Calls the static throwable func in Util class
+            _ = try Util.binaryCheck(input) //Calls the static throwable func in Util class
         }
         catch(FormatError.blankError) {
             return FormatError.blankError
@@ -250,10 +253,10 @@ class CalculatorViewModel {
         }
         return nil
     }
-
+    
     func checkDecimalError(input: String) -> FormatError? {
         do {
-         _ = try Util.decimalCheck(input)
+            _ = try Util.decimalCheck(input)
         }
         catch(FormatError.blankError) {
             return FormatError.blankError
@@ -269,7 +272,7 @@ class CalculatorViewModel {
         }
         return nil
     }
-
+    
     func checkHexadecimalError(input: String) -> FormatError? {
         do {
             _ = try Util.hexadecimalCheck(input)
