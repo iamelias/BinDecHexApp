@@ -33,13 +33,10 @@ class BinDecHexController: UIViewController {
         calculatorVM = CalculatorViewModel(calculator: calculator)
         setDelegatesDataSources()
         outletViewConfig()
-        //       deleteCoreGroup() //**for testing**
     }
     
     @IBAction func convertButtonDidTouch(_ sender: Any) {
         calculatorVM?.convertFormat()
-//        print(calculator.fieldText)
-//        print(calculatorVM?.textField)
     }
     
     //MARK: IBACTIONS
