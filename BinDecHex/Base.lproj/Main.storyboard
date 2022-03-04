@@ -89,7 +89,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0001" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXe-Tk-C3X">
-                                                                <rect key="frame" x="0.0" y="41" width="396" height="34"/>
+                                                                <rect key="frame" x="16" y="41" width="364" height="34"/>
                                                                 <color key="backgroundColor" name="TextField"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
